@@ -1,0 +1,110 @@
+import React from 'react';
+
+const Features = () => {
+  const features = [
+    {
+      icon: '🔐',
+      title: 'Authentication System',
+      description: 'Complete user registration, login, password reset, and email verification out of the box.'
+    },
+    {
+      icon: '📊',
+      title: 'Admin Dashboard',
+      description: 'Beautiful admin panel with user management, analytics, and customizable widgets.'
+    },
+    {
+      icon: '💳',
+      title: 'Payment Integration',
+      description: 'Stripe and PayPal integration ready with subscription management and billing.'
+    },
+    {
+      icon: '👥',
+      title: 'User Management',
+      description: 'Role-based access control, user profiles, and permission management system.'
+    },
+    {
+      icon: '📚',
+      title: 'API Documentation',
+      description: 'Auto-generated API docs with interactive testing and comprehensive examples.'
+    },
+    {
+      icon: '🗄️',
+      title: 'Database Migrations',
+      description: 'Pre-built database schemas and migrations for common application patterns.'
+    },
+    {
+      icon: '📧',
+      title: 'Email Templates',
+      description: 'Professional email templates for notifications, marketing, and transactional emails.'
+    },
+    {
+      icon: '🔍',
+      title: 'SEO Optimization',
+      description: 'Built-in SEO features including meta tags, sitemaps, and structured data.'
+    },
+    {
+      icon: '🏢',
+      title: 'Multi-tenancy',
+      description: 'Support for multi-tenant applications with data isolation and tenant management.'
+    }
+  ];
+
+  return (
+    <section id="features" className="py-20 bg-light-gray">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-navy font-sora mb-4">
+            See what's possible with Larafast
+          </h2>
+          <p className="text-lg text-dark-gray max-w-2xl mx-auto">
+            Everything you need to build modern Laravel applications faster than ever before
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1"
+            >
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-semibold text-navy mb-3 font-sora">
+                {feature.title}
+              </h3>
+              <p className="text-dark-gray leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center mt-16">
+          <div className="bg-white rounded-2xl p-8 shadow-sm max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-navy mb-4 font-sora">
+              Ready to get started?
+            </h3>
+            <p className="text-dark-gray mb-6">
+              Join thousands of developers who are already building faster with Larafast
+            </p>
+            <button
+              onClick={() => {
+                const element = document.getElementById('pricing');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="bg-pink text-white px-8 py-3 rounded-lg font-medium hover:bg-pink/90 transition-colors duration-300"
+            >
+              View Pricing Plans
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Features;
