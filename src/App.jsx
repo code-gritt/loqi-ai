@@ -9,12 +9,10 @@ import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
-import GlobalPatterns from './components/GlobalPatterns';
 
 function App() {
   return (
     <div className="App">
-      <GlobalPatterns />
       <Header />
       <Hero />
       <TechStack />

@@ -91,64 +91,82 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="relative py-20 bg-white overflow-hidden">
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 opacity-82"></div>
+      {/* Animated Background Patterns */}
+      <div className="absolute inset-0">
+        {/* Mesh Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 opacity-82"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-pink/17 via-transparent to-blue-500/17"></div>
+        
+        {/* Animated Geometric Patterns */}
+        <div className="absolute top-18 left-18 w-28 h-28 bg-pink/15 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-18 right-18 w-32 h-32 bg-blue-500/15 rounded-full blur-lg animate-bounce" style={{animationDelay: '2.2s'}}></div>
+        <div className="absolute top-1/2 right-1/2 w-24 h-24 bg-purple-500/15 rounded-full blur-2xl animate-pulse" style={{animationDelay: '4.2s'}}></div>
+        
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 opacity-9" style={{
+          backgroundImage: `
+            linear-gradient(rgba(248, 74, 167, 0.15) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(248, 74, 167, 0.15) 1px, transparent 1px)
+          `,
+          backgroundSize: '47px 47px'
+        }}></div>
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-navy font-sora mb-4">
             Wall of Love
           </h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto font-medium">
+          <p className="text-lg text-dark-gray max-w-2xl mx-auto">
             See what developers are saying about Larafast
           </p>
         </div>
 
         {/* Interactive Tech Logos */}
-        <div className="flex justify-center items-center space-x-8 mb-12">
-          <div className="tech-logo-container">
-            <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer animate-tech-bounce">
+        <div className="flex justify-center items-center space-x-8 mb-12 flex-wrap">
+          <div className="tech-logo-container group">
+            <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer animate-bounce">
               <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M24,1.61H14.06L12,5.16,9.94,1.61H0L12,22.39ZM12,14.08,5.16,2.23H9.59L12,6.41l2.41-4.18h4.43Z"/>
               </svg>
             </div>
-            <span className="text-xs text-gray-600 mt-2 block text-center">Vue.js</span>
+            <span className="text-xs text-gray-600 mt-2 block text-center group-hover:text-green-600 transition-colors">Vue.js</span>
           </div>
           
-          <div className="tech-logo-container">
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer animate-tech-pulse" style={{animationDelay: '0.5s'}}>
+          <div className="tech-logo-container group">
+            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer animate-pulse" style={{animationDelay: '0.5s'}}>
               <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
               </svg>
             </div>
-            <span className="text-xs text-gray-600 mt-2 block text-center">Inertia</span>
+            <span className="text-xs text-gray-600 mt-2 block text-center group-hover:text-purple-600 transition-colors">Inertia</span>
           </div>
           
-          <div className="tech-logo-container">
-            <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer animate-tech-rotate" style={{animationDelay: '1s'}}>
+          <div className="tech-logo-container group">
+            <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer animate-ping" style={{animationDelay: '1s'}}>
               <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
               </svg>
             </div>
-            <span className="text-xs text-gray-600 mt-2 block text-center">Laravel</span>
+            <span className="text-xs text-gray-600 mt-2 block text-center group-hover:text-red-600 transition-colors">Laravel</span>
           </div>
           
-          <div className="tech-logo-container">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer animate-tech-bounce" style={{animationDelay: '1.5s'}}>
+          <div className="tech-logo-container group">
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer animate-bounce" style={{animationDelay: '1.5s'}}>
               <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
               </svg>
             </div>
-            <span className="text-xs text-gray-600 mt-2 block text-center">Tailwind</span>
+            <span className="text-xs text-gray-600 mt-2 block text-center group-hover:text-blue-600 transition-colors">Tailwind</span>
           </div>
           
-          <div className="tech-logo-container">
-            <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer animate-tech-pulse" style={{animationDelay: '2s'}}>
+          <div className="tech-logo-container group">
+            <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer animate-pulse" style={{animationDelay: '2s'}}>
               <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
               </svg>
             </div>
-            <span className="text-xs text-gray-600 mt-2 block text-center">Alpine.js</span>
+            <span className="text-xs text-gray-600 mt-2 block text-center group-hover:text-yellow-600 transition-colors">Alpine.js</span>
           </div>
         </div>
 
@@ -168,8 +186,8 @@ const Testimonials = () => {
                 </div>
                 <div className="flex-1">
                   <h4 className="font-semibold text-navy">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-700">{testimonial.title}</p>
-                  <p className="text-sm text-gray-700">{testimonial.company}</p>
+                  <p className="text-sm text-dark-gray">{testimonial.title}</p>
+                  <p className="text-sm text-dark-gray">{testimonial.company}</p>
                 </div>
               </div>
 
@@ -179,7 +197,7 @@ const Testimonials = () => {
                 </div>
               </div>
 
-              <blockquote className="text-gray-700 mb-4 italic font-medium">
+              <blockquote className="text-dark-gray mb-4 italic">
                 "{testimonial.text}"
               </blockquote>
 

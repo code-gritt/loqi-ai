@@ -62,8 +62,26 @@ const Pricing = () => {
 
   return (
     <section id="pricing" className="relative py-20 bg-white overflow-hidden">
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 opacity-78"></div>
+      {/* Animated Background Patterns */}
+      <div className="absolute inset-0">
+        {/* Mesh Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 opacity-78"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-pink/16 via-transparent to-blue-500/16"></div>
+        
+        {/* Animated Geometric Patterns */}
+        <div className="absolute top-14 left-14 w-26 h-26 bg-pink/14 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-14 right-14 w-30 h-30 bg-blue-500/14 rounded-full blur-lg animate-bounce" style={{animationDelay: '1.8s'}}></div>
+        <div className="absolute top-1/3 left-1/3 w-22 h-22 bg-purple-500/14 rounded-full blur-2xl animate-pulse" style={{animationDelay: '3.5s'}}></div>
+        
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 opacity-8" style={{
+          backgroundImage: `
+            linear-gradient(rgba(248, 74, 167, 0.14) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(248, 74, 167, 0.14) 1px, transparent 1px)
+          `,
+          backgroundSize: '46px 46px'
+        }}></div>
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
