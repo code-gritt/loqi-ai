@@ -540,20 +540,6 @@ const Dashboard = () => {
         {/* Mesh Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 opacity-80"></div>
         <div className="absolute inset-0 bg-gradient-to-tr from-pink/17 via-transparent to-blue-500/17"></div>
-        
-        {/* Animated Geometric Patterns */}
-        <div className="absolute top-12 right-12 w-30 h-30 bg-pink/15 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-12 left-12 w-34 h-34 bg-blue-500/15 rounded-full blur-lg animate-bounce" style={{animationDelay: '1.2s'}}></div>
-        <div className="absolute top-1/4 right-1/4 w-26 h-26 bg-purple-500/15 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2.5s'}}></div>
-        
-        {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 opacity-9" style={{
-          backgroundImage: `
-            linear-gradient(rgba(248, 74, 167, 0.15) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(248, 74, 167, 0.15) 1px, transparent 1px)
-          `,
-          backgroundSize: '48px 48px'
-        }}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
