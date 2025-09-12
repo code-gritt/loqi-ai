@@ -20,7 +20,12 @@ const Header = () => {
   return (
     <header className="fixed w-full top-0 z-50 pt-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-white shadow-lg rounded-2xl px-4 py-2 shadow-2xl">
+        {/* Mesh Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-pink/20 via-purple/10 to-blue/20 rounded-2xl blur-sm"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-blue/15 via-pink/10 to-purple/15 rounded-2xl blur-sm"></div>
+        <div className="absolute inset-0 bg-gradient-to-bl from-purple/20 via-blue/10 to-pink/15 rounded-2xl blur-sm"></div>
+        
+        <div className="relative bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl px-4 py-2 shadow-2xl border border-white/20">
           <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center space-x-3">
@@ -84,8 +89,13 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t rounded-b-2xl shadow-lg shadow-white/20 shadow-2xl">
+          <div className="md:hidden mt-4 relative">
+            {/* Mobile Menu Mesh Gradient Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-pink/20 via-purple/10 to-blue/20 rounded-b-2xl blur-sm"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue/15 via-pink/10 to-purple/15 rounded-b-2xl blur-sm"></div>
+            <div className="absolute inset-0 bg-gradient-to-bl from-purple/20 via-blue/10 to-pink/15 rounded-b-2xl blur-sm"></div>
+            
+            <div className="relative px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-sm border-t rounded-b-2xl shadow-lg shadow-white/20 shadow-2xl border border-white/20">
               <button
                 onClick={() => scrollToSection('home')}
                 className="block px-3 py-2 text-navy hover:text-pink transition-colors duration-200 font-medium"
