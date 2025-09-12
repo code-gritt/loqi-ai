@@ -20,15 +20,12 @@ const Header = () => {
   return (
     <header className="fixed w-full top-0 z-50 pt-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Enhanced Mesh Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-pink/40 via-purple/25 to-blue/35 rounded-2xl blur-sm"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-blue/30 via-pink/20 to-purple/25 rounded-2xl blur-sm"></div>
-        <div className="absolute inset-0 bg-gradient-to-bl from-purple/35 via-blue/20 to-pink/25 rounded-2xl blur-sm"></div>
-        <div className="absolute inset-0 bg-gradient-to-tl from-pink/25 via-blue/15 to-purple/20 rounded-2xl blur-sm"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-purple/20 via-pink/15 to-blue/25 rounded-2xl blur-sm"></div>
-        
-        <div className="relative bg-white/90 backdrop-blur-md shadow-lg rounded-2xl px-4 py-2 shadow-2xl border border-white/30">
-          <div className="flex justify-between items-center h-16">
+        <div className="relative bg-white/90 backdrop-blur-md shadow-lg rounded-2xl px-4 py-2 shadow-2xl overflow-hidden">
+          {/* Mesh Gradient Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-pink/10 via-purple/5 to-blue/10 opacity-60"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-blue/5 via-pink/10 to-purple/5 opacity-40"></div>
+          <div className="absolute inset-0 bg-gradient-to-bl from-purple/5 via-blue/5 to-pink/5 opacity-30"></div>
+          <div className="relative flex justify-between items-center h-16 z-10">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center space-x-3">
             <Logo className="w-8 h-8" />
@@ -91,15 +88,13 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 relative">
-            {/* Enhanced Mobile Menu Mesh Gradient Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-pink/40 via-purple/25 to-blue/35 rounded-b-2xl blur-sm"></div>
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue/30 via-pink/20 to-purple/25 rounded-b-2xl blur-sm"></div>
-            <div className="absolute inset-0 bg-gradient-to-bl from-purple/35 via-blue/20 to-pink/25 rounded-b-2xl blur-sm"></div>
-            <div className="absolute inset-0 bg-gradient-to-tl from-pink/25 via-blue/15 to-purple/20 rounded-b-2xl blur-sm"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-purple/20 via-pink/15 to-blue/25 rounded-b-2xl blur-sm"></div>
-            
-            <div className="relative px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/90 backdrop-blur-md border-t rounded-b-2xl shadow-lg shadow-white/20 shadow-2xl border border-white/30">
+          <div className="md:hidden mt-4">
+            <div className="relative px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/90 backdrop-blur-md border-t rounded-b-2xl shadow-lg shadow-white/20 shadow-2xl overflow-hidden">
+              {/* Mesh Gradient Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-pink/10 via-purple/5 to-blue/10 opacity-60"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue/5 via-pink/10 to-purple/5 opacity-40"></div>
+              <div className="absolute inset-0 bg-gradient-to-bl from-purple/5 via-blue/5 to-pink/5 opacity-30"></div>
+              <div className="relative z-10">
               <button
                 onClick={() => scrollToSection('home')}
                 className="block px-3 py-2 text-navy hover:text-pink transition-colors duration-200 font-medium"
@@ -128,6 +123,7 @@ const Header = () => {
                 <Button onClick={() => scrollToSection('pricing')} className="w-full">
                   Get Started
                 </Button>
+              </div>
               </div>
             </div>
           </div>
