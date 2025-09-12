@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from './Button';
 import Logo from './Logo';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -18,18 +29,26 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed w-full top-0 z-50 pt-6 px-4 sm:px-6 lg:px-8">
+    <header className={`fixed w-full top-0 z-50 transition-all duration-500 ${isScrolled ? 'pt-6 px-4 sm:px-6 lg:px-8' : 'pt-0 px-0'}`}>
       <div className="max-w-7xl mx-auto">
-        <div className="relative bg-white/90 backdrop-blur-md shadow-lg rounded-2xl px-4 py-2 shadow-2xl overflow-hidden">
-          {/* Mesh Gradient Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-pink/10 via-purple/5 to-blue/10 opacity-60"></div>
-          <div className="absolute inset-0 bg-gradient-to-tr from-blue/5 via-pink/10 to-purple/5 opacity-40"></div>
-          <div className="absolute inset-0 bg-gradient-to-bl from-purple/5 via-blue/5 to-pink/5 opacity-30"></div>
+        <div className={`relative transition-all duration-500 ${
+          isScrolled 
+            ? 'bg-white/90 backdrop-blur-md shadow-lg rounded-2xl px-4 py-2 shadow-2xl overflow-hidden' 
+            : 'bg-transparent px-4 py-4'
+        }`}>
+          {/* Mesh Gradient Background - Only when scrolled */}
+          {isScrolled && (
+            <>
+              <div className="absolute inset-0 bg-gradient-to-br from-pink/10 via-purple/5 to-blue/10 opacity-60"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue/5 via-pink/10 to-purple/5 opacity-40"></div>
+              <div className="absolute inset-0 bg-gradient-to-bl from-purple/5 via-blue/5 to-pink/5 opacity-30"></div>
+            </>
+          )}
           <div className="relative flex justify-between items-center h-16 z-10">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center space-x-3">
             <Logo className="w-8 h-8" />
-            <h1 className="text-2xl font-bold text-navy font-sora">
+            <h1 className={`text-2xl font-bold font-sora transition-colors duration-500 ${isScrolled ? 'text-navy' : 'text-white'}`}>
               Larafast
             </h1>
           </div>
@@ -38,25 +57,25 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             <button
               onClick={() => scrollToSection('home')}
-              className="text-navy hover:text-pink transition-colors duration-200 font-medium"
+              className={`hover:text-pink transition-colors duration-200 font-medium ${isScrolled ? 'text-navy' : 'text-white'}`}
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection('features')}
-              className="text-navy hover:text-pink transition-colors duration-200 font-medium"
+              className={`hover:text-pink transition-colors duration-200 font-medium ${isScrolled ? 'text-navy' : 'text-white'}`}
             >
               Features
             </button>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="text-navy hover:text-pink transition-colors duration-200 font-medium"
+              className={`hover:text-pink transition-colors duration-200 font-medium ${isScrolled ? 'text-navy' : 'text-white'}`}
             >
               Pricing
             </button>
             <button
               onClick={() => scrollToSection('testimonials')}
-              className="text-navy hover:text-pink transition-colors duration-200 font-medium"
+              className={`hover:text-pink transition-colors duration-200 font-medium ${isScrolled ? 'text-navy' : 'text-white'}`}
             >
               Testimonials
             </button>
@@ -73,7 +92,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-navy hover:text-pink focus:outline-none focus:text-pink"
+              className={`hover:text-pink focus:outline-none focus:text-pink transition-colors duration-200 ${isScrolled ? 'text-navy' : 'text-white'}`}
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isMenuOpen ? (
@@ -89,33 +108,41 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden mt-4">
-            <div className="relative px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/90 backdrop-blur-md border-t rounded-b-2xl shadow-lg shadow-white/20 shadow-2xl overflow-hidden">
-              {/* Mesh Gradient Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-pink/10 via-purple/5 to-blue/10 opacity-60"></div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue/5 via-pink/10 to-purple/5 opacity-40"></div>
-              <div className="absolute inset-0 bg-gradient-to-bl from-purple/5 via-blue/5 to-pink/5 opacity-30"></div>
+            <div className={`relative px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t rounded-b-2xl shadow-lg shadow-white/20 shadow-2xl overflow-hidden transition-all duration-500 ${
+              isScrolled 
+                ? 'bg-white/90 backdrop-blur-md' 
+                : 'bg-navy/90 backdrop-blur-md'
+            }`}>
+              {/* Mesh Gradient Background - Only when scrolled */}
+              {isScrolled && (
+                <>
+                  <div className="absolute inset-0 bg-gradient-to-br from-pink/10 via-purple/5 to-blue/10 opacity-60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue/5 via-pink/10 to-purple/5 opacity-40"></div>
+                  <div className="absolute inset-0 bg-gradient-to-bl from-purple/5 via-blue/5 to-pink/5 opacity-30"></div>
+                </>
+              )}
               <div className="relative z-10">
               <button
                 onClick={() => scrollToSection('home')}
-                className="block px-3 py-2 text-navy hover:text-pink transition-colors duration-200 font-medium"
+                className={`block px-3 py-2 hover:text-pink transition-colors duration-200 font-medium ${isScrolled ? 'text-navy' : 'text-white'}`}
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection('features')}
-                className="block px-3 py-2 text-navy hover:text-pink transition-colors duration-200 font-medium"
+                className={`block px-3 py-2 hover:text-pink transition-colors duration-200 font-medium ${isScrolled ? 'text-navy' : 'text-white'}`}
               >
                 Features
               </button>
               <button
                 onClick={() => scrollToSection('pricing')}
-                className="block px-3 py-2 text-navy hover:text-pink transition-colors duration-200 font-medium"
+                className={`block px-3 py-2 hover:text-pink transition-colors duration-200 font-medium ${isScrolled ? 'text-navy' : 'text-white'}`}
               >
                 Pricing
               </button>
               <button
                 onClick={() => scrollToSection('testimonials')}
-                className="block px-3 py-2 text-navy hover:text-pink transition-colors duration-200 font-medium"
+                className={`block px-3 py-2 hover:text-pink transition-colors duration-200 font-medium ${isScrolled ? 'text-navy' : 'text-white'}`}
               >
                 Testimonials
               </button>
