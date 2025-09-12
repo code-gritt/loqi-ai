@@ -10,7 +10,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-navy text-white">
+    <footer className="bg-navy text-white shadow-2xl shadow-pink/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-4 gap-8 mb-12">
@@ -27,7 +27,7 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="w-10 h-10 bg-pink rounded-full flex items-center justify-center hover:bg-pink/80 transition-colors duration-300"
+                className="w-10 h-10 bg-pink rounded-full flex items-center justify-center hover:bg-pink/80 transition-all duration-300 shadow-lg shadow-pink/30 hover:shadow-pink/50"
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -36,7 +36,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-pink rounded-full flex items-center justify-center hover:bg-pink/80 transition-colors duration-300"
+                className="w-10 h-10 bg-pink rounded-full flex items-center justify-center hover:bg-pink/80 transition-all duration-300 shadow-lg shadow-pink/30 hover:shadow-pink/50"
                 aria-label="GitHub"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -45,7 +45,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-pink rounded-full flex items-center justify-center hover:bg-pink/80 transition-colors duration-300"
+                className="w-10 h-10 bg-pink rounded-full flex items-center justify-center hover:bg-pink/80 transition-all duration-300 shadow-lg shadow-pink/30 hover:shadow-pink/50"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -134,7 +134,7 @@ const Footer = () => {
             </p>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="bg-pink text-white px-8 py-3 rounded-lg font-medium hover:bg-pink/90 transition-colors duration-300"
+              className="bg-pink text-white px-8 py-3 rounded-lg font-medium hover:bg-pink/90 transition-all duration-300 shadow-lg shadow-pink/30 hover:shadow-pink/50"
             >
               Get Larafast Now
             </button>
