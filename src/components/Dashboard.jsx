@@ -1,8 +1,35 @@
 import React, { useState } from 'react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [isLoading, setIsLoading] = useState(false);
+
+  // Dummy data for charts
+  const dashboardData = [
+    { name: 'Jan', users: 4000, revenue: 2400 },
+    { name: 'Feb', users: 3000, revenue: 1398 },
+    { name: 'Mar', users: 2000, revenue: 9800 },
+    { name: 'Apr', users: 2780, revenue: 3908 },
+    { name: 'May', users: 1890, revenue: 4800 },
+    { name: 'Jun', users: 2390, revenue: 3800 },
+  ];
+
+  const trafficData = [
+    { name: 'Mon', pageViews: 4000, sessions: 2400 },
+    { name: 'Tue', pageViews: 3000, sessions: 1398 },
+    { name: 'Wed', pageViews: 2000, sessions: 9800 },
+    { name: 'Thu', pageViews: 2780, sessions: 3908 },
+    { name: 'Fri', pageViews: 1890, sessions: 4800 },
+    { name: 'Sat', pageViews: 2390, sessions: 3800 },
+    { name: 'Sun', pageViews: 3490, sessions: 4300 },
+  ];
+
+  const engagementData = [
+    { name: 'Mobile', value: 45, color: '#ec4899' },
+    { name: 'Desktop', value: 35, color: '#3b82f6' },
+    { name: 'Tablet', value: 20, color: '#10b981' },
+  ];
 
   const handleTabChange = (tabId) => {
     setIsLoading(true);
@@ -41,12 +68,38 @@ const Dashboard = () => {
       {/* Chart Area */}
       <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
         <h3 className="text-lg font-semibold text-navy mb-4">Analytics Overview</h3>
-        <div className="h-64 bg-gradient-to-r from-pink/10 to-blue-500/10 rounded-lg flex items-center justify-center">
-          <div className="text-center">
-            <div className="text-4xl mb-2">📈</div>
-            <p className="text-gray-600">Interactive charts and graphs</p>
-            <p className="text-sm text-gray-500">Real-time data visualization</p>
-          </div>
+        <div className="h-64">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={dashboardData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+              <XAxis dataKey="name" stroke="#6b7280" />
+              <YAxis stroke="#6b7280" />
+              <Tooltip 
+                contentStyle={{ 
+                  backgroundColor: 'white', 
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '8px',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+                }} 
+              />
+              <Line 
+                type="monotone" 
+                dataKey="users" 
+                stroke="#ec4899" 
+                strokeWidth={3}
+                dot={{ fill: '#ec4899', strokeWidth: 2, r: 4 }}
+                activeDot={{ r: 6, stroke: '#ec4899', strokeWidth: 2 }}
+              />
+              <Line 
+                type="monotone" 
+                dataKey="revenue" 
+                stroke="#3b82f6" 
+                strokeWidth={3}
+                dot={{ fill: '#3b82f6', strokeWidth: 2, r: 4 }}
+                activeDot={{ r: 6, stroke: '#3b82f6', strokeWidth: 2 }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
       </div>
 
@@ -190,23 +243,56 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <h3 className="text-lg font-semibold text-navy mb-4">Traffic Overview</h3>
-          <div className="h-64 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-4xl mb-2">📊</div>
-              <p className="text-gray-600">Traffic Analytics Chart</p>
-              <p className="text-sm text-gray-500">Page views, sessions, and bounce rate</p>
-            </div>
+          <div className="h-64">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={trafficData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                <XAxis dataKey="name" stroke="#6b7280" />
+                <YAxis stroke="#6b7280" />
+                <Tooltip 
+                  contentStyle={{ 
+                    backgroundColor: 'white', 
+                    border: '1px solid #e5e7eb',
+                    borderRadius: '8px',
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+                  }} 
+                />
+                <Bar dataKey="pageViews" fill="#ec4899" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="sessions" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
           </div>
         </div>
         
         <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <h3 className="text-lg font-semibold text-navy mb-4">User Engagement</h3>
-          <div className="h-64 bg-gradient-to-br from-green-50 to-emerald-100 rounded-lg flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-4xl mb-2">👥</div>
-              <p className="text-gray-600">Engagement Metrics</p>
-              <p className="text-sm text-gray-500">Time on site, pages per session</p>
-            </div>
+          <div className="h-64">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={engagementData}
+                  cx="50%"
+                  cy="50%"
+                  labelLine={false}
+                  label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                  outerRadius={80}
+                  fill="#8884d8"
+                  dataKey="value"
+                >
+                  {engagementData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Pie>
+                <Tooltip 
+                  contentStyle={{ 
+                    backgroundColor: 'white', 
+                    border: '1px solid #e5e7eb',
+                    borderRadius: '8px',
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+                  }} 
+                />
+              </PieChart>
+            </ResponsiveContainer>
           </div>
         </div>
       </div>
