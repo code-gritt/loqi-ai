@@ -101,8 +101,9 @@ const Hero = () => {
               <div className="flex items-center space-x-6 opacity-60">
                 <div className="text-lg font-semibold">Google</div>
                 <div className="text-lg font-semibold">Microsoft</div>
-                <div className="text-lg font-semibold">Shopify</div>
-                <div className="text-lg font-semibold">Stripe</div>
+                <div className="text-lg font-semibold">AWS</div>
+                <div className="text-lg font-semibold">Figma</div>
+                <div className="text-lg font-semibold">Github</div>
               </div>
             </div>
           </div>
