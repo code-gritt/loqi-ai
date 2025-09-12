@@ -57,8 +57,29 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 bg-light-gray">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 bg-white overflow-hidden">
+      {/* Animated Background Patterns */}
+      <div className="absolute inset-0">
+        {/* Mesh Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-light-gray via-white to-light-gray opacity-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-pink/5 via-transparent to-blue-500/5"></div>
+        
+        {/* Animated Geometric Patterns */}
+        <div className="absolute top-16 right-16 w-24 h-24 bg-pink/5 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-16 left-16 w-28 h-28 bg-blue-500/5 rounded-full blur-lg animate-bounce" style={{animationDelay: '2.5s'}}></div>
+        <div className="absolute top-1/4 left-1/4 w-20 h-20 bg-purple-500/5 rounded-full blur-2xl animate-pulse" style={{animationDelay: '5s'}}></div>
+        
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 opacity-3" style={{
+          backgroundImage: `
+            linear-gradient(rgba(248, 74, 167, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(248, 74, 167, 0.05) 1px, transparent 1px)
+          `,
+          backgroundSize: '44px 44px'
+        }}></div>
+      </div>
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-navy font-sora mb-4">
             Frequently Asked Questions

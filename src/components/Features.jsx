@@ -50,8 +50,29 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-20 bg-light-gray">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="features" className="relative py-20 bg-white overflow-hidden">
+      {/* Animated Background Patterns */}
+      <div className="absolute inset-0">
+        {/* Mesh Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-light-gray via-white to-light-gray opacity-40"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-pink/6 via-transparent to-blue-500/6"></div>
+        
+        {/* Animated Geometric Patterns */}
+        <div className="absolute top-16 left-16 w-32 h-32 bg-pink/6 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-16 right-16 w-28 h-28 bg-blue-500/6 rounded-full blur-lg animate-bounce" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-purple-500/6 rounded-full blur-2xl animate-pulse" style={{animationDelay: '4s'}}></div>
+        
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 opacity-3" style={{
+          backgroundImage: `
+            linear-gradient(rgba(248, 74, 167, 0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(248, 74, 167, 0.06) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px'
+        }}></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-navy font-sora mb-4">
             See what's possible with Larafast

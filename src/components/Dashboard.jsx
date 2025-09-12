@@ -534,8 +534,29 @@ const Dashboard = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 bg-white overflow-hidden">
+      {/* Animated Background Patterns */}
+      <div className="absolute inset-0">
+        {/* Mesh Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-light-gray to-white opacity-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-pink/7 via-transparent to-blue-500/7"></div>
+        
+        {/* Animated Geometric Patterns */}
+        <div className="absolute top-12 right-12 w-30 h-30 bg-pink/7 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-12 left-12 w-34 h-34 bg-blue-500/7 rounded-full blur-lg animate-bounce" style={{animationDelay: '1.2s'}}></div>
+        <div className="absolute top-1/4 right-1/4 w-26 h-26 bg-purple-500/7 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2.5s'}}></div>
+        
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 opacity-4" style={{
+          backgroundImage: `
+            linear-gradient(rgba(248, 74, 167, 0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(248, 74, 167, 0.07) 1px, transparent 1px)
+          `,
+          backgroundSize: '48px 48px'
+        }}></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-navy font-sora mb-4">
             Beautiful Admin Dashboard
