@@ -26,7 +26,7 @@ const Header = () => {
           <div className="flex-shrink-0 flex items-center space-x-3">
             <Logo className="w-8 h-8" />
             <h1 className="text-2xl font-bold text-navy font-sora">
-              Larafast
+              LarafastT
             </h1>
           </div>
 
