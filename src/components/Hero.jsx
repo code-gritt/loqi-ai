@@ -1,5 +1,9 @@
 import React from 'react';
 import Button from './Button';
+import GoogleIcon from '../assets/Google Icon.svg';
+import AWSIcon from '../assets/AWS Icon.svg';
+import FigmaIcon from '../assets/Figma Icon.svg';
+import GitHubIcon from '../assets/GitHub Icon.svg';
 
 const Hero = () => {
   const scrollToSection = (sectionId) => {
@@ -99,11 +103,16 @@ const Hero = () => {
             <div className="pt-6 border-t border-gray-700">
               <p className="text-sm text-gray-400 mb-4">Trusted by developers at:</p>
               <div className="flex items-center space-x-6 opacity-60">
-                <div className="text-lg font-semibold">Google</div>
-                <div className="text-lg font-semibold">Microsoft</div>
-                <div className="text-lg font-semibold">AWS</div>
-                <div className="text-lg font-semibold">Figma</div>
-                <div className="text-lg font-semibold">Github</div>
+                <img src={GoogleIcon} alt="Google" className="h-6 w-auto" />
+                <svg className="h-6 w-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="1" width="10" height="10" fill="#F25022"/>
+                  <rect x="13" y="1" width="10" height="10" fill="#7FBA00"/>
+                  <rect x="1" y="13" width="10" height="10" fill="#00A4EF"/>
+                  <rect x="13" y="13" width="10" height="10" fill="#FFB900"/>
+                </svg>
+                <img src={AWSIcon} alt="AWS" className="h-6 w-auto" />
+                <img src={FigmaIcon} alt="Figma" className="h-6 w-auto" />
+                <img src={GitHubIcon} alt="GitHub" className="h-6 w-auto" />
               </div>
             </div>
           </div>
