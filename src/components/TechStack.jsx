@@ -17,19 +17,19 @@ const TechStack = () => {
       {/* Animated Background Patterns */}
       <div className="absolute inset-0">
         {/* Mesh Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-light-gray via-white to-light-gray opacity-50"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-pink/5 via-transparent to-blue-500/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-pink/15 via-transparent to-blue-500/15"></div>
         
         {/* Animated Geometric Patterns */}
-        <div className="absolute top-10 right-10 w-24 h-24 bg-pink/5 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-10 left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-lg animate-bounce" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-purple-500/5 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-10 right-10 w-24 h-24 bg-pink/12 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-10 left-10 w-32 h-32 bg-blue-500/12 rounded-full blur-lg animate-bounce" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-purple-500/12 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
         
         {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 opacity-3" style={{
+        <div className="absolute inset-0 opacity-8" style={{
           backgroundImage: `
-            linear-gradient(rgba(248, 74, 167, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(248, 74, 167, 0.05) 1px, transparent 1px)
+            linear-gradient(rgba(248, 74, 167, 0.12) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(248, 74, 167, 0.12) 1px, transparent 1px)
           `,
           backgroundSize: '40px 40px'
         }}></div>
@@ -40,7 +40,7 @@ const TechStack = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-navy font-sora mb-4">
             Available with VILT & TALL Stacks
           </h2>
-          <p className="text-lg text-dark-gray max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto font-medium">
             Larafast works seamlessly with the most popular Laravel development stacks
           </p>
         </div>
@@ -63,7 +63,7 @@ const TechStack = () => {
 
         {/* Additional info */}
         <div className="text-center mt-12">
-          <p className="text-dark-gray">
+          <p className="text-gray-700 font-medium">
             Plus support for <span className="font-semibold text-navy">React</span>,{' '}
             <span className="font-semibold text-navy">Next.js</span>, and{' '}
             <span className="font-semibold text-navy">Nuxt.js</span>

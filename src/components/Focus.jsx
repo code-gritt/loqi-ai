@@ -6,19 +6,19 @@ const Focus = () => {
       {/* Animated Background Patterns */}
       <div className="absolute inset-0">
         {/* Mesh Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-light-gray to-white opacity-60"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-pink/8 via-transparent to-blue-500/8"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 opacity-85"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-pink/18 via-transparent to-blue-500/18"></div>
         
         {/* Animated Geometric Patterns */}
-        <div className="absolute top-20 left-20 w-28 h-28 bg-pink/8 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-36 h-36 bg-blue-500/8 rounded-full blur-lg animate-bounce" style={{animationDelay: '1.5s'}}></div>
-        <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-purple-500/8 rounded-full blur-2xl animate-pulse" style={{animationDelay: '3s'}}></div>
+        <div className="absolute top-20 left-20 w-28 h-28 bg-pink/15 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-36 h-36 bg-blue-500/15 rounded-full blur-lg animate-bounce" style={{animationDelay: '1.5s'}}></div>
+        <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-purple-500/15 rounded-full blur-2xl animate-pulse" style={{animationDelay: '3s'}}></div>
         
         {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 opacity-4" style={{
+        <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `
-            linear-gradient(rgba(248, 74, 167, 0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(248, 74, 167, 0.08) 1px, transparent 1px)
+            linear-gradient(rgba(248, 74, 167, 0.15) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(248, 74, 167, 0.15) 1px, transparent 1px)
           `,
           backgroundSize: '45px 45px'
         }}></div>
@@ -33,11 +33,11 @@ const Focus = () => {
               <span className="text-pink">IDEA</span>
             </h2>
             
-            <h3 className="text-xl text-dark-gray font-medium">
+            <h3 className="text-xl text-gray-700 font-semibold">
               Not the implementation
             </h3>
             
-            <p className="text-lg text-dark-gray leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed font-medium">
               Stop spending weeks on authentication, admin panels, and boilerplate code. 
               Larafast gives you a solid foundation so you can focus on what makes your 
               application unique.
@@ -50,7 +50,7 @@ const Focus = () => {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-dark-gray">Pre-built authentication system</span>
+                <span className="text-gray-700 font-medium">Pre-built authentication system</span>
               </div>
               
               <div className="flex items-center space-x-3">
@@ -59,7 +59,7 @@ const Focus = () => {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-dark-gray">Complete admin dashboard</span>
+                <span className="text-gray-700 font-medium">Complete admin dashboard</span>
               </div>
               
               <div className="flex items-center space-x-3">
@@ -68,7 +68,7 @@ const Focus = () => {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-dark-gray">Payment integration ready</span>
+                <span className="text-gray-700 font-medium">Payment integration ready</span>
               </div>
             </div>
           </div>

@@ -538,19 +538,19 @@ const Dashboard = () => {
       {/* Animated Background Patterns */}
       <div className="absolute inset-0">
         {/* Mesh Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-light-gray to-white opacity-50"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-pink/7 via-transparent to-blue-500/7"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-pink/17 via-transparent to-blue-500/17"></div>
         
         {/* Animated Geometric Patterns */}
-        <div className="absolute top-12 right-12 w-30 h-30 bg-pink/7 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-12 left-12 w-34 h-34 bg-blue-500/7 rounded-full blur-lg animate-bounce" style={{animationDelay: '1.2s'}}></div>
-        <div className="absolute top-1/4 right-1/4 w-26 h-26 bg-purple-500/7 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2.5s'}}></div>
+        <div className="absolute top-12 right-12 w-30 h-30 bg-pink/15 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-12 left-12 w-34 h-34 bg-blue-500/15 rounded-full blur-lg animate-bounce" style={{animationDelay: '1.2s'}}></div>
+        <div className="absolute top-1/4 right-1/4 w-26 h-26 bg-purple-500/15 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2.5s'}}></div>
         
         {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 opacity-4" style={{
+        <div className="absolute inset-0 opacity-9" style={{
           backgroundImage: `
-            linear-gradient(rgba(248, 74, 167, 0.07) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(248, 74, 167, 0.07) 1px, transparent 1px)
+            linear-gradient(rgba(248, 74, 167, 0.15) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(248, 74, 167, 0.15) 1px, transparent 1px)
           `,
           backgroundSize: '48px 48px'
         }}></div>
