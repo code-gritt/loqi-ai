@@ -14,7 +14,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative bg-navy text-white pt-24 min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative bg-navy text-white pt-36 min-h-screen flex items-center overflow-hidden">
       {/* Animated Background Patterns */}
       <div className="absolute inset-0">
         {/* Mesh Gradient Background */}
@@ -66,16 +66,16 @@ const Hero = () => {
             </p>
 
             {/* Stats Row */}
-            <div className="grid grid-cols-3 gap-6 py-6">
-              <div className="text-center">
+            <div className="grid grid-cols-3">
+              <div className="text-left">
                 <div className="text-3xl font-bold text-pink">500+</div>
                 <div className="text-sm text-gray-400">Hours Saved</div>
               </div>
-              <div className="text-center">
+              <div className="text-left">
                 <div className="text-3xl font-bold text-pink">50+</div>
                 <div className="text-sm text-gray-400">Pre-built Components</div>
               </div>
-              <div className="text-center">
+              <div className="text-left">
                 <div className="text-3xl font-bold text-pink">99%</div>
                 <div className="text-sm text-gray-400">Developer Satisfaction</div>
               </div>
