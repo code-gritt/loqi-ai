@@ -5,22 +5,27 @@ const WhatsAppButton = () => {
   const message = "Hi! I'm interested in Larafast. Can you help me get started?";
   
   const handleWhatsAppClick = () => {
+    console.log('WhatsApp button clicked!');
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
+    console.log('Opening WhatsApp URL:', whatsappUrl);
     window.open(whatsappUrl, '_blank');
   };
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
+      {/* Floating Animation - Behind the button */}
+      <div className="absolute inset-0 bg-pink/10 rounded-full blur-lg animate-ping opacity-75 -z-10"></div>
+      
       <button
         onClick={handleWhatsAppClick}
-        className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:shadow-green-500/50 transition-all duration-300 group animate-bounce"
+        className="relative w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:shadow-green-500/50 transition-all duration-300 group animate-bounce cursor-pointer z-10"
         aria-label="Chat with us on WhatsApp"
         title="Chat with us on WhatsApp"
       >
         {/* WhatsApp Icon */}
         <svg 
-          className="w-8 h-8 text-white" 
+          className="w-8 h-8 text-white relative z-20" 
           fill="currentColor" 
           viewBox="0 0 24 24"
         >
@@ -28,11 +33,8 @@ const WhatsAppButton = () => {
         </svg>
         
         {/* Pink Glow Effect */}
-        <div className="absolute inset-0 bg-pink/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-pink/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
       </button>
-      
-      {/* Floating Animation */}
-      <div className="absolute inset-0 bg-pink/10 rounded-full blur-lg animate-ping opacity-75"></div>
     </div>
   );
 };
