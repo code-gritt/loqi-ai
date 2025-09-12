@@ -134,7 +134,7 @@ const Footer = () => {
             </p>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="bg-pink text-white px-8 py-3 rounded-lg font-medium hover:bg-pink/90 transition-all duration-300 shadow-lg shadow-pink/30 hover:shadow-pink/50"
+              className="bg-pink text-white px-8 py-3 rounded-lg font-medium hover:bg-pink/90 transition-all duration-300 shadow-lg shadow-pink/30 hover:shadow-pink/50 cursor-pointer"
             >
               Get Larafast Now
             </button>

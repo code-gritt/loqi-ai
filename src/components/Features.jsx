@@ -88,7 +88,7 @@ const Features = () => {
               key={index}
               className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1"
             >
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-4xl mb-4">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-semibold text-navy mb-3 font-sora">

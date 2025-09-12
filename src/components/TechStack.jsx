@@ -44,8 +44,8 @@ const TechStack = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8">
           {/* Vue.js */}
-          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group">
-            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg mb-3 group-hover:animate-bounce transition-all duration-300">
+          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group cursor-pointer">
+            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-3">
               <img src={VueIcon} alt="Vue.js" className="w-10 h-10" />
             </div>
             <div className="text-sm font-medium text-navy text-center group-hover:text-green-600 transition-colors">
@@ -54,8 +54,8 @@ const TechStack = () => {
           </div>
 
           {/* Ionic */}
-          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group">
-            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg mb-3 group-hover:animate-bounce transition-all duration-300">
+          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group cursor-pointer">
+            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-3">
               <img src={IonicIcon} alt="Ionic" className="w-10 h-10" />
             </div>
             <div className="text-sm font-medium text-navy text-center group-hover:text-purple-600 transition-colors">
@@ -64,8 +64,8 @@ const TechStack = () => {
           </div>
 
           {/* Laravel */}
-          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group">
-            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg mb-3 group-hover:animate-bounce transition-all duration-300">
+          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group cursor-pointer">
+            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-3">
               <img src={LaravelIcon} alt="Laravel" className="w-10 h-10" />
             </div>
             <div className="text-sm font-medium text-navy text-center group-hover:text-red-600 transition-colors">
@@ -74,8 +74,8 @@ const TechStack = () => {
           </div>
 
           {/* Tailwind CSS */}
-          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group">
-            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg mb-3 group-hover:animate-bounce transition-all duration-300">
+          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group cursor-pointer">
+            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-3">
               <img src={TailwindIcon} alt="Tailwind CSS" className="w-10 h-10" />
             </div>
             <div className="text-sm font-medium text-navy text-center group-hover:text-cyan-600 transition-colors">
@@ -84,8 +84,8 @@ const TechStack = () => {
           </div>
 
           {/* Alpine.js */}
-          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group">
-            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg mb-3 group-hover:animate-bounce transition-all duration-300">
+          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group cursor-pointer">
+            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-3">
               <img src={AlpineIcon} alt="Alpine.js" className="w-10 h-10" />
             </div>
             <div className="text-sm font-medium text-navy text-center group-hover:text-blue-600 transition-colors">
@@ -94,8 +94,8 @@ const TechStack = () => {
           </div>
 
           {/* Livewire */}
-          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group">
-            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg mb-3 group-hover:animate-bounce transition-all duration-300">
+          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group cursor-pointer">
+            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-3">
               <img src={LivewireIcon} alt="Livewire" className="w-10 h-10" />
             </div>
             <div className="text-sm font-medium text-navy text-center group-hover:text-orange-600 transition-colors">
@@ -104,8 +104,8 @@ const TechStack = () => {
           </div>
 
           {/* PHP */}
-          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group">
-            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg mb-3 group-hover:animate-bounce transition-all duration-300">
+          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group cursor-pointer">
+            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-3">
               <img src={PHPIcon} alt="PHP" className="w-10 h-10" />
             </div>
             <div className="text-sm font-medium text-navy text-center group-hover:text-indigo-600 transition-colors">
@@ -114,8 +114,8 @@ const TechStack = () => {
           </div>
 
           {/* MySQL */}
-          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group">
-            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg mb-3 group-hover:animate-bounce transition-all duration-300">
+          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group cursor-pointer">
+            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-3">
               <img src={MySQLIcon} alt="MySQL" className="w-10 h-10" />
             </div>
             <div className="text-sm font-medium text-navy text-center group-hover:text-blue-600 transition-colors">
