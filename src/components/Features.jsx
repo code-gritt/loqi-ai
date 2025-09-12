@@ -86,7 +86,7 @@ const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1"
+              className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1"
             >
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
@@ -103,7 +103,7 @@ const Features = () => {
 
         {/* CTA Section */}
         <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl p-8 shadow-sm max-w-2xl mx-auto">
+          <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-navy mb-4 font-sora">
               Ready to get started?
             </h3>
