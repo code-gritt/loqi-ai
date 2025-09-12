@@ -104,7 +104,7 @@ const Dashboard = () => {
     <>
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold text-navy">User Management</h2>
-        <button className="bg-pink text-white px-4 py-2 rounded-lg hover:bg-pink/90 transition-colors">
+        <button className="bg-pink text-white px-4 py-2 rounded-lg hover:bg-pink/90 transition-all duration-300 shadow-lg shadow-pink/30 hover:shadow-pink/50">
           Add New User
         </button>
       </div>
@@ -302,7 +302,7 @@ const Dashboard = () => {
         <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <h3 className="text-lg font-semibold text-navy mb-4">Security Settings</h3>
           <div className="space-y-4">
-            <button className="bg-pink text-white px-4 py-2 rounded-lg hover:bg-pink/90 transition-colors">
+            <button className="bg-pink text-white px-4 py-2 rounded-lg hover:bg-pink/90 transition-all duration-300 shadow-lg shadow-pink/30 hover:shadow-pink/50">
               Change Password
             </button>
             <button className="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors ml-4">
@@ -319,7 +319,7 @@ const Dashboard = () => {
     <>
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold text-navy">Payment Management</h2>
-        <button className="bg-pink text-white px-4 py-2 rounded-lg hover:bg-pink/90 transition-colors">
+        <button className="bg-pink text-white px-4 py-2 rounded-lg hover:bg-pink/90 transition-all duration-300 shadow-lg shadow-pink/30 hover:shadow-pink/50">
           Add Payment Method
         </button>
       </div>
@@ -421,7 +421,7 @@ const Dashboard = () => {
             <div className="text-3xl mb-4">{report.icon}</div>
             <h3 className="text-lg font-semibold text-navy mb-2">{report.title}</h3>
             <p className="text-gray-600 text-sm mb-4">{report.description}</p>
-            <button className="w-full bg-pink text-white py-2 rounded-lg hover:bg-pink/90 transition-colors">
+            <button className="w-full bg-pink text-white py-2 rounded-lg hover:bg-pink/90 transition-all duration-300 shadow-lg shadow-pink/30 hover:shadow-pink/50">
               Generate Report
             </button>
           </div>
@@ -503,7 +503,7 @@ const Dashboard = () => {
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink/50"
             />
           </div>
-          <button className="bg-pink text-white px-6 py-2 rounded-lg hover:bg-pink/90 transition-colors">
+          <button className="bg-pink text-white px-6 py-2 rounded-lg hover:bg-pink/90 transition-all duration-300 shadow-lg shadow-pink/30 hover:shadow-pink/50">
             Submit Ticket
           </button>
         </div>

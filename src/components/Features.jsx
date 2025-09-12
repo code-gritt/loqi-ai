@@ -117,7 +117,7 @@ const Features = () => {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="bg-pink text-white px-8 py-3 rounded-lg font-medium hover:bg-pink/90 transition-colors duration-300"
+              className="bg-pink text-white px-8 py-3 rounded-lg font-medium hover:bg-pink/90 transition-all duration-300 shadow-lg shadow-pink/30 hover:shadow-pink/50"
             >
               View Pricing Plans
             </button>

@@ -144,7 +144,7 @@ const FAQ = () => {
               Our support team is here to help you get the most out of Larafast
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-pink text-white px-6 py-3 rounded-lg font-medium hover:bg-pink/90 transition-colors duration-300">
+              <button className="bg-pink text-white px-6 py-3 rounded-lg font-medium hover:bg-pink/90 transition-all duration-300 shadow-lg shadow-pink/30 hover:shadow-pink/50">
                 Contact Support
               </button>
               <button className="border-2 border-pink text-pink px-6 py-3 rounded-lg font-medium hover:bg-pink hover:text-white transition-colors duration-300">
