@@ -9,6 +9,7 @@ import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Testimonials />
       <FAQ />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
