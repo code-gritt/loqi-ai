@@ -127,7 +127,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-light-gray rounded-xl p-6 hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-pink/20">

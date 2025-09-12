@@ -93,7 +93,7 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-sm overflow-hidden"
+              className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden"
             >
               <button
                 onClick={() => toggleItem(index)}
@@ -136,7 +136,7 @@ const FAQ = () => {
 
         {/* Contact CTA */}
         <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl p-8 shadow-sm">
+          <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
             <h3 className="text-2xl font-bold text-navy mb-4 font-sora">
               Still have questions?
             </h3>

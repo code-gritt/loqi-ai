@@ -97,7 +97,7 @@ const Pricing = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 ${
+              className={`relative bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 ${
                 plan.popular 
                   ? 'ring-2 ring-pink scale-105' 
                   : 'hover:-translate-y-1'
@@ -151,7 +151,7 @@ const Pricing = () => {
 
         {/* Additional Info */}
         <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl p-8 max-w-4xl mx-auto shadow-sm">
+          <div className="bg-white rounded-2xl p-8 max-w-4xl mx-auto border border-gray-200 shadow-sm">
             <h3 className="text-2xl font-bold text-navy mb-4 font-sora">
               All Plans Include
             </h3>

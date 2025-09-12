@@ -24,7 +24,7 @@ const Dashboard = () => {
           { title: 'Orders', value: '1,234', change: '-3%', color: 'text-red-500' },
           { title: 'Conversion', value: '3.2%', change: '+5%', color: 'text-green-500' }
         ].map((stat, index) => (
-          <div key={index} className="bg-white rounded-lg p-6 shadow-sm">
+          <div key={index} className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-600 text-sm font-medium">{stat.title}</p>
@@ -39,7 +39,7 @@ const Dashboard = () => {
       </div>
 
       {/* Chart Area */}
-      <div className="bg-white rounded-lg p-6 shadow-sm">
+      <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
         <h3 className="text-lg font-semibold text-navy mb-4">Analytics Overview</h3>
         <div className="h-64 bg-gradient-to-r from-pink/10 to-blue-500/10 rounded-lg flex items-center justify-center">
           <div className="text-center">
@@ -52,7 +52,7 @@ const Dashboard = () => {
 
       {/* Recent Activity */}
       <div className="grid md:grid-cols-2 gap-6 mt-6">
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <h3 className="text-lg font-semibold text-navy mb-4">Recent Users</h3>
           <div className="space-y-3">
             {[
@@ -76,7 +76,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <h3 className="text-lg font-semibold text-navy mb-4">Quick Actions</h3>
           <div className="space-y-3">
             {[
@@ -188,7 +188,7 @@ const Dashboard = () => {
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <h3 className="text-lg font-semibold text-navy mb-4">Traffic Overview</h3>
           <div className="h-64 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg flex items-center justify-center">
             <div className="text-center">
@@ -199,7 +199,7 @@ const Dashboard = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <h3 className="text-lg font-semibold text-navy mb-4">User Engagement</h3>
           <div className="h-64 bg-gradient-to-br from-green-50 to-emerald-100 rounded-lg flex items-center justify-center">
             <div className="text-center">
@@ -212,7 +212,7 @@ const Dashboard = () => {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <h4 className="font-semibold text-navy">Page Views</h4>
             <span className="text-2xl">📄</span>
@@ -221,7 +221,7 @@ const Dashboard = () => {
           <div className="text-sm text-green-600">+12.5% from last month</div>
         </div>
         
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <h4 className="font-semibold text-navy">Unique Visitors</h4>
             <span className="text-2xl">👤</span>
@@ -230,7 +230,7 @@ const Dashboard = () => {
           <div className="text-sm text-green-600">+8.2% from last month</div>
         </div>
         
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <h4 className="font-semibold text-navy">Conversion Rate</h4>
             <span className="text-2xl">🎯</span>
@@ -251,7 +251,7 @@ const Dashboard = () => {
       </div>
       
       <div className="space-y-6">
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <h3 className="text-lg font-semibold text-navy mb-4">General Settings</h3>
           <div className="space-y-4">
             <div>
@@ -273,7 +273,7 @@ const Dashboard = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <h3 className="text-lg font-semibold text-navy mb-4">Email Settings</h3>
           <div className="space-y-4">
             <div className="flex items-center justify-between">
@@ -299,7 +299,7 @@ const Dashboard = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <h3 className="text-lg font-semibold text-navy mb-4">Security Settings</h3>
           <div className="space-y-4">
             <button className="bg-pink text-white px-4 py-2 rounded-lg hover:bg-pink/90 transition-colors">
@@ -325,7 +325,7 @@ const Dashboard = () => {
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <h3 className="text-lg font-semibold text-navy mb-4">Recent Transactions</h3>
           <div className="space-y-3">
             {[
@@ -353,7 +353,7 @@ const Dashboard = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <h3 className="text-lg font-semibold text-navy mb-4">Payment Methods</h3>
           <div className="space-y-3">
             <div className="flex items-center justify-between p-3 border rounded-lg">
@@ -380,7 +380,7 @@ const Dashboard = () => {
         </div>
       </div>
       
-      <div className="bg-white rounded-lg p-6 shadow-sm">
+      <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
         <h3 className="text-lg font-semibold text-navy mb-4">Billing Summary</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="text-center">
@@ -439,7 +439,7 @@ const Dashboard = () => {
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <h3 className="text-lg font-semibold text-navy mb-4">Quick Help</h3>
           <div className="space-y-3">
             {[
@@ -456,7 +456,7 @@ const Dashboard = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
           <h3 className="text-lg font-semibold text-navy mb-4">Contact Support</h3>
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
@@ -484,7 +484,7 @@ const Dashboard = () => {
         </div>
       </div>
       
-      <div className="bg-white rounded-lg p-6 shadow-sm">
+      <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
         <h3 className="text-lg font-semibold text-navy mb-4">Submit a Ticket</h3>
         <div className="space-y-4">
           <div>
