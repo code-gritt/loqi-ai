@@ -1,61 +1,8 @@
 import React, { useState } from 'react';
-import {
-  LineChart,
-  Line,
-  AreaChart,
-  Area,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell
-} from 'recharts';
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [isLoading, setIsLoading] = useState(false);
-
-  // Dummy data for charts
-  const trafficData = [
-    { name: 'Jan', visitors: 4000, pageViews: 2400, bounceRate: 65 },
-    { name: 'Feb', visitors: 3000, pageViews: 1398, bounceRate: 58 },
-    { name: 'Mar', visitors: 2000, pageViews: 9800, bounceRate: 72 },
-    { name: 'Apr', visitors: 2780, pageViews: 3908, bounceRate: 45 },
-    { name: 'May', visitors: 1890, pageViews: 4800, bounceRate: 68 },
-    { name: 'Jun', visitors: 2390, pageViews: 3800, bounceRate: 52 },
-    { name: 'Jul', visitors: 3490, pageViews: 4300, bounceRate: 61 }
-  ];
-
-  const engagementData = [
-    { name: 'Mon', likes: 400, shares: 240, comments: 180 },
-    { name: 'Tue', likes: 300, shares: 139, comments: 221 },
-    { name: 'Wed', likes: 200, shares: 980, comments: 110 },
-    { name: 'Thu', likes: 278, shares: 390, comments: 200 },
-    { name: 'Fri', likes: 189, shares: 480, comments: 300 },
-    { name: 'Sat', likes: 239, shares: 380, comments: 250 },
-    { name: 'Sun', likes: 349, shares: 430, comments: 190 }
-  ];
-
-  const deviceData = [
-    { name: 'Desktop', value: 45, color: '#F84AA7' },
-    { name: 'Mobile', value: 35, color: '#3B82F6' },
-    { name: 'Tablet', value: 20, color: '#10B981' }
-  ];
-
-  const revenueData = [
-    { month: 'Jan', revenue: 12000, profit: 8000 },
-    { month: 'Feb', revenue: 19000, profit: 12000 },
-    { month: 'Mar', revenue: 3000, profit: 2000 },
-    { month: 'Apr', revenue: 5000, profit: 3000 },
-    { month: 'May', revenue: 2000, profit: 1500 },
-    { month: 'Jun', revenue: 23000, profit: 18000 }
-  ];
 
   const handleTabChange = (tabId) => {
     setIsLoading(true);
@@ -91,138 +38,16 @@ const Dashboard = () => {
         ))}
       </div>
 
-      {/* Charts Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        {/* Traffic Analytics Chart */}
-        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-          <h3 className="text-lg font-semibold text-navy mb-4">Traffic Analytics</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <AreaChart data={trafficData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-              <XAxis dataKey="name" stroke="#6B7280" />
-              <YAxis stroke="#6B7280" />
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: '#fff', 
-                  border: '1px solid #e5e7eb',
-                  borderRadius: '8px',
-                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-                }}
-              />
-              <Legend />
-              <Area 
-                type="monotone" 
-                dataKey="visitors" 
-                stackId="1" 
-                stroke="#F84AA7" 
-                fill="#F84AA7" 
-                fillOpacity={0.6}
-                name="Visitors"
-              />
-              <Area 
-                type="monotone" 
-                dataKey="pageViews" 
-                stackId="1" 
-                stroke="#3B82F6" 
-                fill="#3B82F6" 
-                fillOpacity={0.6}
-                name="Page Views"
-              />
-            </AreaChart>
-          </ResponsiveContainer>
+      {/* Chart Area */}
+      <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
+        <h3 className="text-lg font-semibold text-navy mb-4">Analytics Overview</h3>
+        <div className="h-64 bg-gradient-to-r from-pink/10 to-blue-500/10 rounded-lg flex items-center justify-center">
+          <div className="text-center">
+            <div className="text-4xl mb-2">📈</div>
+            <p className="text-gray-600">Interactive charts and graphs</p>
+            <p className="text-sm text-gray-500">Real-time data visualization</p>
+          </div>
         </div>
-
-        {/* Device Distribution */}
-        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-          <h3 className="text-lg font-semibold text-navy mb-4">Device Distribution</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <PieChart>
-              <Pie
-                data={deviceData}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                outerRadius={80}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                {deviceData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
-              </Pie>
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: '#fff', 
-                  border: '1px solid #e5e7eb',
-                  borderRadius: '8px',
-                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-                }}
-              />
-            </PieChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
-
-      {/* Engagement Metrics */}
-      <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm mb-8">
-        <h3 className="text-lg font-semibold text-navy mb-4">Engagement Metrics</h3>
-        <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={engagementData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-            <XAxis dataKey="name" stroke="#6B7280" />
-            <YAxis stroke="#6B7280" />
-            <Tooltip 
-              contentStyle={{ 
-                backgroundColor: '#fff', 
-                border: '1px solid #e5e7eb',
-                borderRadius: '8px',
-                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-              }}
-            />
-            <Legend />
-            <Bar dataKey="likes" fill="#F84AA7" name="Likes" />
-            <Bar dataKey="shares" fill="#3B82F6" name="Shares" />
-            <Bar dataKey="comments" fill="#10B981" name="Comments" />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
-
-      {/* Revenue Trend */}
-      <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm mb-8">
-        <h3 className="text-lg font-semibold text-navy mb-4">Revenue Trend</h3>
-        <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={revenueData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-            <XAxis dataKey="month" stroke="#6B7280" />
-            <YAxis stroke="#6B7280" />
-            <Tooltip 
-              contentStyle={{ 
-                backgroundColor: '#fff', 
-                border: '1px solid #e5e7eb',
-                borderRadius: '8px',
-                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-              }}
-            />
-            <Legend />
-            <Line 
-              type="monotone" 
-              dataKey="revenue" 
-              stroke="#F84AA7" 
-              strokeWidth={3}
-              dot={{ fill: '#F84AA7', strokeWidth: 2, r: 6 }}
-              name="Revenue"
-            />
-            <Line 
-              type="monotone" 
-              dataKey="profit" 
-              stroke="#10B981" 
-              strokeWidth={3}
-              dot={{ fill: '#10B981', strokeWidth: 2, r: 6 }}
-              name="Profit"
-            />
-          </LineChart>
-        </ResponsiveContainer>
       </div>
 
       {/* Recent Activity */}
