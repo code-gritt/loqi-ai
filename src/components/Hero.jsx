@@ -10,7 +10,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative bg-navy text-white pt-16 min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative bg-navy text-white pt-24 min-h-screen flex items-center overflow-hidden">
       {/* Animated Background Patterns */}
       <div className="absolute inset-0">
         {/* Mesh Gradient Background */}
