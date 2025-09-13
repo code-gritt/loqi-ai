@@ -57,11 +57,11 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-white overflow-hidden">
+    <section className="relative py-20 bg-white dark:bg-dark-bg overflow-hidden">
       {/* Animated Background Patterns */}
       <div className="absolute inset-0">
         {/* Mesh Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 dark:from-dark-surface dark:via-dark-bg dark:to-dark-surface opacity-80"></div>
         <div className="absolute inset-0 bg-gradient-to-tr from-pink/15 via-transparent to-blue-500/15"></div>
         
         {/* Animated Geometric Patterns */}
@@ -81,10 +81,10 @@ const FAQ = () => {
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy font-sora mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-navy dark:text-dark-text font-sora mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-dark-gray">
+          <p className="text-lg text-dark-gray dark:text-dark-text-secondary">
             Everything you need to know about Larafast
           </p>
         </div>
@@ -93,13 +93,13 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden"
+              className="bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden"
             >
               <button
                 onClick={() => toggleItem(index)}
-                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
               >
-                <h3 className="text-lg font-semibold text-navy pr-4">
+                <h3 className="text-lg font-semibold text-navy dark:text-dark-text pr-4">
                   {faq.question}
                 </h3>
                 <div className="flex-shrink-0">
@@ -123,8 +123,8 @@ const FAQ = () => {
               
               {openItems.has(index) && (
                 <div className="px-6 pb-4">
-                  <div className="border-t pt-4">
-                    <p className="text-dark-gray leading-relaxed">
+                  <div className="border-t dark:border-gray-700 pt-4">
+                    <p className="text-dark-gray dark:text-dark-text-secondary leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
@@ -136,11 +136,11 @@ const FAQ = () => {
 
         {/* Contact CTA */}
         <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
-            <h3 className="text-2xl font-bold text-navy mb-4 font-sora">
+          <div className="bg-white dark:bg-dark-card rounded-2xl p-8 border border-gray-200 dark:border-gray-700 shadow-sm">
+            <h3 className="text-2xl font-bold text-navy dark:text-dark-text mb-4 font-sora">
               Still have questions?
             </h3>
-            <p className="text-dark-gray mb-6">
+            <p className="text-dark-gray dark:text-dark-text-secondary mb-6">
               Our support team is here to help you get the most out of Larafast
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemeProvider } from './contexts/ThemeContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import TechStack from './components/TechStack';
@@ -13,19 +14,21 @@ import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <TechStack />
-      <Focus />
-      <Features />
-      <Dashboard />
-      <Pricing />
-      <Testimonials />
-      <FAQ />
-      <Footer />
-      <WhatsAppButton />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <Header />
+        <Hero />
+        <TechStack />
+        <Focus />
+        <Features />
+        <Dashboard />
+        <Pricing />
+        <Testimonials />
+        <FAQ />
+        <Footer />
+        <WhatsAppButton />
+      </div>
+    </ThemeProvider>
   );
 }
 

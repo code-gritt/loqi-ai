@@ -10,7 +10,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-navy text-white shadow-2xl shadow-pink/10">
+    <footer className="bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:bg-navy dark:from-navy dark:via-navy dark:to-navy text-gray-900 dark:text-white shadow-2xl shadow-pink/10 dark:shadow-pink/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-4 gap-8 mb-12">
@@ -20,7 +20,7 @@ const Footer = () => {
               <Logo className="w-10 h-10" />
               <h3 className="text-2xl font-bold font-sora">Larafast</h3>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md">
+            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-md">
               Accelerate your Laravel development with our comprehensive toolkit. 
               Build faster, ship sooner, and focus on what matters most.
             </p>
@@ -62,7 +62,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('home')}
-                  className="text-gray-300 hover:text-pink transition-colors duration-200"
+                  className="text-gray-600 dark:text-gray-300 hover:text-pink transition-colors duration-200"
                 >
                   Home
                 </button>
@@ -70,7 +70,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('features')}
-                  className="text-gray-300 hover:text-pink transition-colors duration-200"
+                  className="text-gray-600 dark:text-gray-300 hover:text-pink transition-colors duration-200"
                 >
                   Features
                 </button>
@@ -78,7 +78,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('pricing')}
-                  className="text-gray-300 hover:text-pink transition-colors duration-200"
+                  className="text-gray-600 dark:text-gray-300 hover:text-pink transition-colors duration-200"
                 >
                   Pricing
                 </button>
@@ -86,7 +86,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('testimonials')}
-                  className="text-gray-300 hover:text-pink transition-colors duration-200"
+                  className="text-gray-600 dark:text-gray-300 hover:text-pink transition-colors duration-200"
                 >
                   Testimonials
                 </button>
@@ -99,22 +99,22 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Support</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-300 hover:text-pink transition-colors duration-200">
+                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-pink transition-colors duration-200">
                   Documentation
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-pink transition-colors duration-200">
+                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-pink transition-colors duration-200">
                   Help Center
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-pink transition-colors duration-200">
+                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-pink transition-colors duration-200">
                   Contact Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-pink transition-colors duration-200">
+                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-pink transition-colors duration-200">
                   Status Page
                 </a>
               </li>
@@ -123,12 +123,12 @@ const Footer = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="border-t border-gray-700 pt-8 mb-8">
+        <div className="border-t border-gray-300 dark:border-gray-700 pt-8 mb-8">
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-4 font-sora">
               Ready to start?
             </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
               Join thousands of developers who are already building faster with Larafast. 
               Get started today and see the difference.
             </p>
@@ -142,19 +142,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-gray-700 pt-8">
+        <div className="border-t border-gray-300 dark:border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm mb-4 md:mb-0">
+            <div className="text-gray-500 dark:text-gray-400 text-sm mb-4 md:mb-0">
               © 2024 Larafast. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-pink transition-colors duration-200">
+              <a href="#" className="text-gray-500 dark:text-gray-400 hover:text-pink transition-colors duration-200">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-pink transition-colors duration-200">
+              <a href="#" className="text-gray-500 dark:text-gray-400 hover:text-pink transition-colors duration-200">
                 Terms of Service
               </a>
-              <a href="#" className="text-gray-400 hover:text-pink transition-colors duration-200">
+              <a href="#" className="text-gray-500 dark:text-gray-400 hover:text-pink transition-colors duration-200">
                 Cookie Policy
               </a>
             </div>

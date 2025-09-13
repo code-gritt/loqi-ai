@@ -2,11 +2,11 @@ import React from 'react';
 
 const Focus = () => {
   return (
-    <section className="relative py-20 bg-white overflow-hidden">
+    <section className="relative py-20 bg-white dark:bg-dark-bg overflow-hidden">
       {/* Animated Background Patterns */}
       <div className="absolute inset-0">
         {/* Mesh Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 opacity-85"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 dark:from-dark-surface dark:via-dark-bg dark:to-dark-surface opacity-85"></div>
         <div className="absolute inset-0 bg-gradient-to-tr from-pink/18 via-transparent to-blue-500/18"></div>
         
         {/* Animated Geometric Patterns */}
@@ -28,16 +28,16 @@ const Focus = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy font-sora">
+            <h2 className="text-3xl md:text-4xl font-bold text-navy dark:text-dark-text font-sora">
               Focus on the{' '}
               <span className="text-pink">IDEA</span>
             </h2>
             
-            <h3 className="text-xl text-gray-700 font-semibold">
+            <h3 className="text-xl text-gray-700 dark:text-dark-text-secondary font-semibold">
               Not the implementation
             </h3>
             
-            <p className="text-lg text-gray-700 leading-relaxed font-medium">
+            <p className="text-lg text-gray-700 dark:text-dark-text-secondary leading-relaxed font-medium">
               Stop spending weeks on authentication, admin panels, and boilerplate code. 
               Larafast gives you a solid foundation so you can focus on what makes your 
               application unique.
@@ -50,7 +50,7 @@ const Focus = () => {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-gray-700 font-medium">Pre-built authentication system</span>
+                <span className="text-gray-700 dark:text-dark-text-secondary font-medium">Pre-built authentication system</span>
               </div>
               
               <div className="flex items-center space-x-3">
@@ -59,7 +59,7 @@ const Focus = () => {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-gray-700 font-medium">Complete admin dashboard</span>
+                <span className="text-gray-700 dark:text-dark-text-secondary font-medium">Complete admin dashboard</span>
               </div>
               
               <div className="flex items-center space-x-3">
@@ -68,14 +68,16 @@ const Focus = () => {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-gray-700 font-medium">Payment integration ready</span>
+                <span className="text-gray-700 dark:text-dark-text-secondary font-medium">Payment integration ready</span>
               </div>
             </div>
           </div>
 
           {/* Right Column - Code Visual */}
           <div className="relative">
-            <div className="bg-gray-900 rounded-2xl p-6 shadow-2xl">
+            {/* Pink Glow Effect for Dark Mode */}
+            <div className="absolute inset-0 bg-pink/20 dark:bg-pink/30 rounded-2xl blur-xl dark:blur-2xl opacity-0 dark:opacity-100"></div>
+            <div className="relative bg-gray-900 dark:bg-gray-900 rounded-2xl p-6 shadow-2xl dark:shadow-pink/20 dark:shadow-2xl">
               {/* Code Header */}
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>

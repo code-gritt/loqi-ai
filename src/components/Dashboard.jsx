@@ -51,11 +51,11 @@ const Dashboard = () => {
           { title: 'Orders', value: '1,234', change: '-3%', color: 'text-red-500' },
           { title: 'Conversion', value: '3.2%', change: '+5%', color: 'text-green-500' }
         ].map((stat, index) => (
-          <div key={index} className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
+          <div key={index} className="bg-white dark:bg-dark-card rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-600 text-sm font-medium">{stat.title}</p>
-                <p className="text-2xl font-bold text-navy">{stat.value}</p>
+                <p className="text-gray-600 dark:text-dark-text-secondary text-sm font-medium">{stat.title}</p>
+                <p className="text-2xl font-bold text-navy dark:text-dark-text">{stat.value}</p>
               </div>
               <div className={`text-sm font-medium ${stat.color}`}>
                 {stat.change}
@@ -66,21 +66,22 @@ const Dashboard = () => {
       </div>
 
       {/* Chart Area */}
-      <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-        <h3 className="text-lg font-semibold text-navy mb-4">Analytics Overview</h3>
+      <div className="bg-white dark:bg-dark-card rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+        <h3 className="text-lg font-semibold text-navy dark:text-dark-text mb-4">Analytics Overview</h3>
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={dashboardData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-              <XAxis dataKey="name" stroke="#6b7280" />
-              <YAxis stroke="#6b7280" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" className="dark:stroke-gray-700" />
+              <XAxis dataKey="name" stroke="#6b7280" className="dark:stroke-gray-400" />
+              <YAxis stroke="#6b7280" className="dark:stroke-gray-400" />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: 'white', 
-                  border: '1px solid #e5e7eb',
+                  backgroundColor: 'var(--tw-bg-opacity, 1)',
+                  border: '1px solid var(--tw-border-opacity, 1)',
                   borderRadius: '8px',
                   boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-                }} 
+                }}
+                wrapperClassName="dark:bg-dark-card dark:border-gray-700"
               />
               <Line 
                 type="monotone" 
@@ -105,8 +106,8 @@ const Dashboard = () => {
 
       {/* Recent Activity */}
       <div className="grid md:grid-cols-2 gap-6 mt-6">
-        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-          <h3 className="text-lg font-semibold text-navy mb-4">Recent Users</h3>
+        <div className="bg-white dark:bg-dark-card rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+          <h3 className="text-lg font-semibold text-navy dark:text-dark-text mb-4">Recent Users</h3>
           <div className="space-y-3">
             {[
               { name: 'John Doe', email: 'john@example.com', time: '2 min ago' },
@@ -120,17 +121,17 @@ const Dashboard = () => {
                   </span>
                 </div>
                 <div className="flex-1">
-                  <p className="font-medium text-navy">{user.name}</p>
-                  <p className="text-sm text-gray-600">{user.email}</p>
+                  <p className="font-medium text-navy dark:text-dark-text">{user.name}</p>
+                  <p className="text-sm text-gray-600 dark:text-dark-text-secondary">{user.email}</p>
                 </div>
-                <span className="text-xs text-gray-500">{user.time}</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400">{user.time}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-          <h3 className="text-lg font-semibold text-navy mb-4">Quick Actions</h3>
+        <div className="bg-white dark:bg-dark-card rounded-lg p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+          <h3 className="text-lg font-semibold text-navy dark:text-dark-text mb-4">Quick Actions</h3>
           <div className="space-y-3">
             {[
               { name: 'Add New User', icon: '👤' },
@@ -140,10 +141,10 @@ const Dashboard = () => {
             ].map((action, index) => (
               <button
                 key={index}
-                className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <span className="text-lg">{action.icon}</span>
-                <span className="text-navy font-medium">{action.name}</span>
+                <span className="text-navy dark:text-dark-text font-medium">{action.name}</span>
               </button>
             ))}
           </div>
@@ -620,20 +621,20 @@ const Dashboard = () => {
   };
 
   return (
-    <section className="relative py-20 bg-white overflow-hidden">
+    <section className="relative py-20 bg-white dark:bg-dark-bg overflow-hidden">
       {/* Animated Background Patterns */}
       <div className="absolute inset-0">
         {/* Mesh Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 dark:from-dark-surface dark:via-dark-bg dark:to-dark-surface opacity-80"></div>
         <div className="absolute inset-0 bg-gradient-to-tr from-pink/17 via-transparent to-blue-500/17"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy font-sora mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-navy dark:text-dark-text font-sora mb-4">
             Beautiful Admin Dashboard
           </h2>
-          <p className="text-lg text-dark-gray max-w-2xl mx-auto">
+          <p className="text-lg text-dark-gray dark:text-dark-text-secondary max-w-2xl mx-auto">
             Get a professional admin panel that's ready to use from day one
           </p>
         </div>

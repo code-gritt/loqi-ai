@@ -61,11 +61,11 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="relative py-20 bg-white overflow-hidden">
+    <section id="pricing" className="relative py-20 bg-white dark:bg-dark-bg overflow-hidden">
       {/* Animated Background Patterns */}
       <div className="absolute inset-0">
         {/* Mesh Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 opacity-78"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 dark:from-dark-surface dark:via-dark-bg dark:to-dark-surface opacity-78"></div>
         <div className="absolute inset-0 bg-gradient-to-tr from-pink/16 via-transparent to-blue-500/16"></div>
         
         {/* Animated Geometric Patterns */}
@@ -85,10 +85,10 @@ const Pricing = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy font-sora mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-navy dark:text-dark-text font-sora mb-4">
             Simple, Transparent Pricing
           </h2>
-          <p className="text-lg text-dark-gray max-w-2xl mx-auto">
+          <p className="text-lg text-dark-gray dark:text-dark-text-secondary max-w-2xl mx-auto">
             Choose the plan that fits your needs. All plans include lifetime updates and support.
           </p>
         </div>
@@ -97,7 +97,7 @@ const Pricing = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 ${
+              className={`relative bg-white dark:bg-dark-card rounded-2xl p-8 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 ${
                 plan.popular 
                   ? 'ring-2 ring-pink scale-105' 
                   : 'hover:-translate-y-1'
@@ -112,14 +112,14 @@ const Pricing = () => {
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-navy mb-2 font-sora">
+                <h3 className="text-2xl font-bold text-navy dark:text-dark-text mb-2 font-sora">
                   {plan.name}
                 </h3>
                 <div className="mb-4">
-                  <span className="text-4xl font-bold text-navy">{plan.price}</span>
-                  <span className="text-dark-gray ml-2">/{plan.period}</span>
+                  <span className="text-4xl font-bold text-navy dark:text-dark-text">{plan.price}</span>
+                  <span className="text-dark-gray dark:text-dark-text-secondary ml-2">/{plan.period}</span>
                 </div>
-                <p className="text-dark-gray">{plan.description}</p>
+                <p className="text-dark-gray dark:text-dark-text-secondary">{plan.description}</p>
               </div>
 
               <ul className="space-y-4 mb-8">
@@ -130,7 +130,7 @@ const Pricing = () => {
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <span className="text-dark-gray">{feature}</span>
+                    <span className="text-dark-gray dark:text-dark-text-secondary">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -151,25 +151,25 @@ const Pricing = () => {
 
         {/* Additional Info */}
         <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl p-8 max-w-4xl mx-auto border border-gray-200 shadow-sm">
-            <h3 className="text-2xl font-bold text-navy mb-4 font-sora">
+          <div className="bg-white dark:bg-dark-card rounded-2xl p-8 max-w-4xl mx-auto border border-gray-200 dark:border-gray-700 shadow-sm">
+            <h3 className="text-2xl font-bold text-navy dark:text-dark-text mb-4 font-sora">
               All Plans Include
             </h3>
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <div className="space-y-2">
                 <div className="text-3xl mb-2">🔄</div>
-                <h4 className="font-semibold text-navy">Lifetime Updates</h4>
-                <p className="text-sm text-dark-gray">Free updates forever</p>
+                <h4 className="font-semibold text-navy dark:text-dark-text">Lifetime Updates</h4>
+                <p className="text-sm text-dark-gray dark:text-dark-text-secondary">Free updates forever</p>
               </div>
               <div className="space-y-2">
                 <div className="text-3xl mb-2">🎧</div>
-                <h4 className="font-semibold text-navy">24/7 Support</h4>
-                <p className="text-sm text-dark-gray">We're here to help</p>
+                <h4 className="font-semibold text-navy dark:text-dark-text">24/7 Support</h4>
+                <p className="text-sm text-dark-gray dark:text-dark-text-secondary">We're here to help</p>
               </div>
               <div className="space-y-2">
                 <div className="text-3xl mb-2">📚</div>
-                <h4 className="font-semibold text-navy">Documentation</h4>
-                <p className="text-sm text-dark-gray">Comprehensive guides</p>
+                <h4 className="font-semibold text-navy dark:text-dark-text">Documentation</h4>
+                <p className="text-sm text-dark-gray dark:text-dark-text-secondary">Comprehensive guides</p>
               </div>
             </div>
           </div>

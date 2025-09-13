@@ -90,20 +90,20 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="relative py-20 bg-white overflow-hidden">
+    <section id="testimonials" className="relative py-20 bg-white dark:bg-dark-bg overflow-hidden">
       {/* Animated Background Patterns */}
       <div className="absolute inset-0">
         {/* Mesh Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 opacity-82"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 dark:from-dark-surface dark:via-dark-bg dark:to-dark-surface opacity-82"></div>
         <div className="absolute inset-0 bg-gradient-to-tr from-pink/17 via-transparent to-blue-500/17"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy font-sora mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-navy dark:text-dark-text font-sora mb-4">
             Wall of Love
           </h2>
-          <p className="text-lg text-dark-gray max-w-2xl mx-auto">
+          <p className="text-lg text-dark-gray dark:text-dark-text-secondary max-w-2xl mx-auto">
             See what developers are saying about Larafast
           </p>
         </div>
@@ -113,7 +113,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="bg-white dark:bg-dark-card rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-pink/20">
@@ -124,9 +124,9 @@ const Testimonials = () => {
                   />
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-semibold text-navy">{testimonial.name}</h4>
-                  <p className="text-sm text-dark-gray">{testimonial.title}</p>
-                  <p className="text-sm text-dark-gray">{testimonial.company}</p>
+                  <h4 className="font-semibold text-navy dark:text-dark-text">{testimonial.name}</h4>
+                  <p className="text-sm text-dark-gray dark:text-dark-text-secondary">{testimonial.title}</p>
+                  <p className="text-sm text-dark-gray dark:text-dark-text-secondary">{testimonial.company}</p>
                 </div>
               </div>
 
@@ -136,7 +136,7 @@ const Testimonials = () => {
                 </div>
               </div>
 
-              <blockquote className="text-dark-gray mb-4 italic">
+              <blockquote className="text-dark-gray dark:text-dark-text-secondary mb-4 italic">
                 "{testimonial.text}"
               </blockquote>
 

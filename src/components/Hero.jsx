@@ -14,11 +14,11 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative bg-navy text-white pt-36 min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:bg-navy text-gray-900 dark:text-white pt-36 min-h-screen flex items-center overflow-hidden">
       {/* Animated Background Patterns */}
       <div className="absolute inset-0">
         {/* Mesh Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-navy via-purple-900 to-navy opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-navy dark:via-purple-900 dark:to-navy opacity-90"></div>
         <div className="absolute inset-0 bg-gradient-to-tr from-pink/20 via-transparent to-blue-500/20"></div>
         
         {/* Animated Geometric Patterns */}
@@ -60,7 +60,7 @@ const Hero = () => {
               </span>
             </h1>
             
-            <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
               Accelerate your Laravel development with our comprehensive toolkit. 
               Focus on building amazing features instead of repetitive boilerplate code.
             </p>
@@ -69,15 +69,15 @@ const Hero = () => {
             <div className="grid grid-cols-3">
               <div className="text-left">
                 <div className="text-3xl font-bold text-pink">500+</div>
-                <div className="text-sm text-gray-400">Hours Saved</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">Hours Saved</div>
               </div>
               <div className="text-left">
                 <div className="text-3xl font-bold text-pink">50+</div>
-                <div className="text-sm text-gray-400">Pre-built Components</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">Pre-built Components</div>
               </div>
               <div className="text-left">
                 <div className="text-3xl font-bold text-pink">99%</div>
-                <div className="text-sm text-gray-400">Developer Satisfaction</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">Developer Satisfaction</div>
               </div>
             </div>
             
@@ -100,8 +100,8 @@ const Hero = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div className="pt-6 border-t border-gray-700">
-              <p className="text-sm text-gray-400 mb-4">Trusted by developers at:</p>
+            <div className="pt-6 border-t border-gray-300 dark:border-gray-700">
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Trusted by developers at:</p>
               <div className="flex items-center space-x-6 opacity-60">
                 <img src={GoogleIcon} alt="Google" className="h-6 w-auto" />
                 <svg className="h-6 w-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -172,38 +172,38 @@ const Hero = () => {
             </div>
 
             {/* Floating Feature Cards */}
-            <div className="absolute -top-6 -left-6 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 animate-float">
+            <div className="absolute -top-6 -left-6 bg-white/10 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 dark:border-white/20 animate-float shadow-lg dark:shadow-pink/20 shadow-2xl">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-pink rounded-lg flex items-center justify-center">
                   <span className="text-white text-sm">⚡</span>
                 </div>
                 <div>
-                  <div className="text-white text-sm font-semibold">Fast Setup</div>
-                  <div className="text-gray-300 text-xs">5 min install</div>
+                  <div className="text-gray-800 dark:text-white text-sm font-semibold">Fast Setup</div>
+                  <div className="text-gray-600 dark:text-gray-300 text-xs">5 min install</div>
                 </div>
               </div>
             </div>
 
-            <div className="absolute -bottom-6 -right-6 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 animate-float" style={{animationDelay: '1s'}}>
+            <div className="absolute -bottom-6 -right-6 bg-white/10 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 dark:border-white/20 animate-float shadow-lg dark:shadow-blue/20 shadow-2xl" style={{animationDelay: '1s'}}>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
                   <span className="text-white text-sm">🔧</span>
                 </div>
                 <div>
-                  <div className="text-white text-sm font-semibold">50+ Components</div>
-                  <div className="text-gray-300 text-xs">Ready to use</div>
+                  <div className="text-gray-800 dark:text-white text-sm font-semibold">50+ Components</div>
+                  <div className="text-gray-600 dark:text-gray-300 text-xs">Ready to use</div>
                 </div>
               </div>
             </div>
 
-            <div className="absolute top-1/2 -right-8 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 animate-float" style={{animationDelay: '2s'}}>
+            <div className="absolute top-1/2 -right-8 bg-white/10 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 dark:border-white/20 animate-float shadow-lg dark:shadow-green/20 shadow-2xl" style={{animationDelay: '2s'}}>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
                   <span className="text-white text-sm">📊</span>
                 </div>
                 <div>
-                  <div className="text-white text-sm font-semibold">Analytics</div>
-                  <div className="text-gray-300 text-xs">Built-in</div>
+                  <div className="text-gray-800 dark:text-white text-sm font-semibold">Analytics</div>
+                  <div className="text-gray-600 dark:text-gray-300 text-xs">Built-in</div>
                 </div>
               </div>
             </div>
