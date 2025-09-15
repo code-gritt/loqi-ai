@@ -172,7 +172,7 @@ const Hero = () => {
             </div>
 
             {/* Floating Feature Cards */}
-            <div className="absolute -top-6 left-2 lg:-left-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 dark:border-white/20 animate-float shadow-lg shadow-gray-200/50 dark:shadow-pink/20">
+            <div className="absolute -top-6 left-2 lg:-left-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 dark:border-white/20 animate-float shadow-lg shadow-black/20">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-pink rounded-lg flex items-center justify-center">
                   <span className="text-white text-sm">⚡</span>
@@ -184,7 +184,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="absolute -bottom-6 right-6 lg:-right-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 dark:border-white/20 animate-float shadow-lg shadow-gray-200/50 dark:shadow-blue/20" style={{animationDelay: '1s'}}>
+            <div className="absolute -bottom-6 right-6 lg:-right-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 dark:border-white/20 animate-float shadow-lg shadow-black/20" style={{animationDelay: '1s'}}>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
                   <span className="text-white text-sm">🔧</span>
@@ -196,7 +196,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="absolute top-1/2 right-2 lg:-right-8 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 dark:border-white/20 animate-float shadow-lg shadow-gray-200/50 dark:shadow-green/20" style={{animationDelay: '2s'}}>
+            <div className="absolute top-1/2 right-2 lg:-right-8 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 dark:border-white/20 animate-float shadow-lg shadow-black/20" style={{animationDelay: '2s'}}>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
                   <span className="text-white text-sm">📊</span>
