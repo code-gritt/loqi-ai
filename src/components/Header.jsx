@@ -115,7 +115,7 @@ const Header = () => {
             <div className={`relative px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t rounded-b-2xl shadow-lg shadow-white/20 dark:shadow-pink/20 shadow-2xl overflow-hidden transition-all duration-500 ${
               isScrolled 
                 ? 'bg-white/90 dark:bg-dark-card/90 backdrop-blur-md' 
-                : 'bg-navy/90 dark:bg-dark-bg/90 backdrop-blur-md'
+                : 'bg-white/90 dark:bg-dark-bg/90 backdrop-blur-md'
             }`}>
               {/* Mesh Gradient Background - Only when scrolled */}
               {isScrolled && (
@@ -154,7 +154,7 @@ const Header = () => {
               </button>
               <div className="px-3 py-2 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium">Theme</span>
+                  <span className="text-sm font-medium dark:text-white">Theme</span>
                   <ThemeToggle />
                 </div>
                 <Button onClick={() => scrollToSection('pricing')} className="w-full">
