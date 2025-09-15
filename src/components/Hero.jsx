@@ -53,7 +53,7 @@ const Hero = () => {
               Trusted by 10,000+ developers
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sora leading-tight">
+            <h1 className="text-5xl lg:text-6xl font-bold font-sora leading-tight">
               Save Hundreds of hours using{' '}
               <span className="text-pink bg-gradient-to-r from-pink to-purple-400 bg-clip-text text-transparent">
                 Larafast
@@ -172,38 +172,38 @@ const Hero = () => {
             </div>
 
             {/* Floating Feature Cards */}
-            <div className="absolute -top-6 -left-6 bg-white/10 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 dark:border-white/20 animate-float shadow-lg dark:shadow-pink/20 shadow-2xl">
+            <div className="absolute -top-6 left-2 lg:-left-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 dark:border-white/20 animate-float shadow-lg shadow-gray-200/50 dark:shadow-pink/20">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-pink rounded-lg flex items-center justify-center">
                   <span className="text-white text-sm">⚡</span>
                 </div>
                 <div>
-                  <div className="text-gray-800 dark:text-white text-sm font-semibold">Fast Setup</div>
-                  <div className="text-gray-600 dark:text-gray-300 text-xs">5 min install</div>
+                  <div className="text-gray-900 dark:text-white text-sm font-semibold">Fast Setup</div>
+                  <div className="text-gray-700 dark:text-gray-300 text-xs">5 min install</div>
                 </div>
               </div>
             </div>
 
-            <div className="absolute -bottom-6 -right-6 bg-white/10 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 dark:border-white/20 animate-float shadow-lg dark:shadow-blue/20 shadow-2xl" style={{animationDelay: '1s'}}>
+            <div className="absolute -bottom-6 right-6 lg:-right-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 dark:border-white/20 animate-float shadow-lg shadow-gray-200/50 dark:shadow-blue/20" style={{animationDelay: '1s'}}>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
                   <span className="text-white text-sm">🔧</span>
                 </div>
                 <div>
-                  <div className="text-gray-800 dark:text-white text-sm font-semibold">50+ Components</div>
-                  <div className="text-gray-600 dark:text-gray-300 text-xs">Ready to use</div>
+                  <div className="text-gray-900 dark:text-white text-sm font-semibold">50+ Components</div>
+                  <div className="text-gray-700 dark:text-gray-300 text-xs">Ready to use</div>
                 </div>
               </div>
             </div>
 
-            <div className="absolute top-1/2 -right-8 bg-white/10 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 dark:border-white/20 animate-float shadow-lg dark:shadow-green/20 shadow-2xl" style={{animationDelay: '2s'}}>
+            <div className="absolute top-1/2 right-2 lg:-right-8 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 dark:border-white/20 animate-float shadow-lg shadow-gray-200/50 dark:shadow-green/20" style={{animationDelay: '2s'}}>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
                   <span className="text-white text-sm">📊</span>
                 </div>
                 <div>
-                  <div className="text-gray-800 dark:text-white text-sm font-semibold">Analytics</div>
-                  <div className="text-gray-600 dark:text-gray-300 text-xs">Built-in</div>
+                  <div className="text-gray-900 dark:text-white text-sm font-semibold">Analytics</div>
+                  <div className="text-gray-700 dark:text-gray-300 text-xs">Built-in</div>
                 </div>
               </div>
             </div>
