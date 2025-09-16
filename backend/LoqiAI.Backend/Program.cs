@@ -4,7 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using LoqiAI.Backend.Data;
 using LoqiAI.Backend.GraphQL;
-using LoqiAI.Backend.Models; // make sure Models/User.cs exists
+using LoqiAI.Backend.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Add Authorization (must be before GraphQL)
+// Add Authorization
 builder.Services.AddAuthorization();
 
 // Add GraphQL with HotChocolate
@@ -21,8 +21,8 @@ builder.Services
     .AddQueryType<Query>()
     .AddMutationType<Mutation>();
 
-// Configure JWT Authentication
-var jwtKey = Encoding.ASCII.GetBytes("89a8aac12af7462998e106384726991b"); // 🔑 replace with a strong secret
+// Configure JWT Authentication (hardcoded key)
+var jwtKey = Encoding.ASCII.GetBytes("89a8aac12af7462998e106384726991b"); // 🔑 hardcoded secret
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -43,7 +43,7 @@ builder.Services.AddSingleton<
 
 var app = builder.Build();
 
-// Middleware
+// Middleware pipeline
 app.UseAuthentication();
 app.UseAuthorization();
 
