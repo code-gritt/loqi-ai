@@ -7,12 +7,13 @@ using LoqiAI.Backend.Data;
 using LoqiAI.Backend.Models;
 using System.Net.Http;
 using System.Text.Json;
-using HotChocolate.Authorization; // ✅ Correct namespace for HotChocolate Authorize
+using HotChocolate.Authorization;
 
 namespace LoqiAI.Backend.GraphQL
 {
     public class Mutation
     {
+        // --- Register ---
         public async Task<string> Register(
             [Service] AppDbContext context,
             [Service] IPasswordHasher<User> hasher,
@@ -36,6 +37,7 @@ namespace LoqiAI.Backend.GraphQL
             return "Registration successful";
         }
 
+        // --- Login ---
         public async Task<string> Login(
             [Service] AppDbContext context,
             [Service] IPasswordHasher<User> hasher,
@@ -68,12 +70,12 @@ namespace LoqiAI.Backend.GraphQL
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        [Authorize] // ✅ Works with HotChocolate after adding the correct using
+        // --- Generate Code (Gemini AI) ---
+        [Authorize]
         public async Task<string> GenerateCode(
             [Service] HttpClient httpClient,
             string prompt)
         {
-            // Build request payload
             var requestBody = new
             {
                 contents = new[]
@@ -97,7 +99,12 @@ namespace LoqiAI.Backend.GraphQL
             };
 
             var response = await httpClient.SendAsync(request);
-            response.EnsureSuccessStatusCode();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorText = await response.Content.ReadAsStringAsync();
+                return $"Gemini API Error ({response.StatusCode}): {errorText}";
+            }
 
             var responseBody = await response.Content.ReadAsStringAsync();
             using var document = JsonDocument.Parse(responseBody);
@@ -109,7 +116,6 @@ namespace LoqiAI.Backend.GraphQL
                 .GetProperty("text")
                 .GetString();
 
-            // Extract code block if present (e.g., ```python\ncode\n```)
             var codeMatch = System.Text.RegularExpressions.Regex.Match(
                 generatedText ?? "",
                 @"```[\w\s]*\n([\s\S]*?)\n```"

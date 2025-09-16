@@ -32,6 +32,7 @@ const Dashboard = () => {
   const [generatedCode, setGeneratedCode] = useState("");
   const [error, setError] = useState("");
 
+  // --- Load current user ---
   useEffect(() => {
     if (!token) return navigate("/login");
 
@@ -55,6 +56,7 @@ const Dashboard = () => {
     if (!user) fetchUser();
   }, [token, user, navigate, setUser, setLoading]);
 
+  // --- Generate code handler ---
   const handleGenerate = async () => {
     if (!prompt) {
       setError("Please enter a prompt");
@@ -69,9 +71,14 @@ const Dashboard = () => {
         { prompt },
         { Authorization: `Bearer ${token}` }
       );
+
       setGeneratedCode(data.generateCode);
     } catch (err) {
-      setError(err.response?.errors[0]?.message || "Failed to generate code");
+      // Show backend error or fallback
+      const message =
+        err.response?.errors?.[0]?.message ||
+        "Failed to generate code. Please try again.";
+      setError(message);
     } finally {
       setLoading(false);
     }
@@ -91,13 +98,19 @@ const Dashboard = () => {
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             Generate Code
           </h2>
+
+          {/* Prompt textarea */}
           <textarea
             placeholder="Enter your prompt (e.g., 'Generate a Python sorting function')"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             className="w-full p-4 border border-gray-300 dark:border-gray-700 rounded-lg mb-4 bg-transparent text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 focus:ring-2 focus:ring-pink focus:border-pink transition-all"
           />
+
+          {/* Error display */}
           {error && <p className="text-red-500 mb-4">{error}</p>}
+
+          {/* Generate button */}
           <button
             onClick={handleGenerate}
             disabled={isLoading}
@@ -106,13 +119,14 @@ const Dashboard = () => {
             Generate
           </button>
 
+          {/* Generated Code */}
           {generatedCode && (
             <div className="mt-6">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                 Generated Code
               </h3>
               <SyntaxHighlighter
-                language="javascript" // Adjust dynamically if needed
+                language="javascript" // could make dynamic later
                 style={useAuthStore.getState().isDarkMode ? vscDarkPlus : vs}
                 className="rounded-lg border border-gray-300 dark:border-gray-700"
                 showLineNumbers
