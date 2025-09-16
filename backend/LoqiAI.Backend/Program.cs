@@ -8,15 +8,22 @@ using LoqiAI.Backend.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// --- Database (Neon PostgreSQL) ---
+// Configure Logging
+builder.Services.AddLogging(logging =>
+{
+    logging.AddConsole();
+    logging.AddDebug();
+});
+
+// Database (Neon PostgreSQL)
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// --- HttpClient (for Gemini API) ---
+// HttpClient (for Gemini API)
 builder.Services.AddHttpClient();
 
-// --- Authentication & Authorization ---
-var jwtKey = Encoding.ASCII.GetBytes("89a8aac12af7462998e106384726991b"); // 🔑 hardcoded secret
+// Authentication & Authorization
+var jwtKey = Encoding.ASCII.GetBytes("89a8aac12af7462998e106384726991b");
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -31,19 +38,19 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-// --- GraphQL (HotChocolate) ---
+// GraphQL (HotChocolate)
 builder.Services
     .AddGraphQLServer()
     .AddQueryType<Query>()
     .AddMutationType<Mutation>();
 
-// --- Password Hasher (User entity) ---
+// Password Hasher (User entity)
 builder.Services.AddSingleton<
     Microsoft.AspNetCore.Identity.IPasswordHasher<User>,
     Microsoft.AspNetCore.Identity.PasswordHasher<User>
 >();
 
-// --- CORS (Frontend Origins) ---
+// CORS (Frontend Origins)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
@@ -59,12 +66,12 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// --- Middleware Order ---
+// Middleware Order
 app.UseCors("AllowFrontend");
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapGraphQL(); // GraphQL endpoint: /graphql
+app.MapGraphQL();
 
 app.Run();

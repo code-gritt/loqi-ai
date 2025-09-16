@@ -8,11 +8,19 @@ using LoqiAI.Backend.Models;
 using System.Net.Http;
 using System.Text.Json;
 using HotChocolate.Authorization;
+using Microsoft.Extensions.Logging; // Added for logging
 
 namespace LoqiAI.Backend.GraphQL
 {
     public class Mutation
     {
+        private readonly ILogger<Mutation> _logger; // Added for logging
+
+        public Mutation(ILogger<Mutation> logger)
+        {
+            _logger = logger;
+        }
+
         // --- Register ---
         public async Task<string> Register(
             [Service] AppDbContext context,
@@ -57,7 +65,6 @@ namespace LoqiAI.Backend.GraphQL
                 new Claim(ClaimTypes.Name, user.Username)
             };
 
-            // 🔑 Hardcoded JWT key
             var jwtKey = Encoding.ASCII.GetBytes("89a8aac12af7462998e106384726991b");
             var creds = new SigningCredentials(new SymmetricSecurityKey(jwtKey), SecurityAlgorithms.HmacSha256);
 
@@ -76,52 +83,75 @@ namespace LoqiAI.Backend.GraphQL
             [Service] HttpClient httpClient,
             string prompt)
         {
-            var requestBody = new
+            try
             {
-                contents = new[]
+                _logger.LogInformation("Generating code for prompt: {Prompt}", prompt);
+
+                var requestBody = new
                 {
-                    new { parts = new[] { new { text = prompt } } }
+                    contents = new[]
+                    {
+                        new { parts = new[] { new { text = prompt } } }
+                    }
+                };
+
+                var json = JsonSerializer.Serialize(requestBody);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var apiKey = "AIzaSyCrFOJs7a9eRY4kc2U6efgERkKpLRH_pqs";
+                var request = new HttpRequestMessage(
+                    HttpMethod.Post,
+                    $"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={apiKey}"
+                )
+                {
+                    Content = content
+                };
+
+                var response = await httpClient.SendAsync(request);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    var errorText = await response.Content.ReadAsStringAsync();
+                    _logger.LogError("Gemini API failed with status {StatusCode}: {ErrorText}", response.StatusCode, errorText);
+                    throw new Exception($"Gemini API error ({response.StatusCode}): {errorText}");
                 }
-            };
 
-            var json = JsonSerializer.Serialize(requestBody);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var responseBody = await response.Content.ReadAsStringAsync();
+                using var document = JsonDocument.Parse(responseBody);
 
-            // 🔑 Hardcoded Gemini API key
-            var apiKey = "AIzaSyCrFOJs7a9eRY4kc2U6efgERkKpLRH_pqs";
+                // Safely navigate JSON structure
+                var root = document.RootElement;
+                if (!root.TryGetProperty("candidates", out var candidates) || candidates.GetArrayLength() == 0)
+                {
+                    _logger.LogError("No candidates found in Gemini response: {ResponseBody}", responseBody);
+                    throw new Exception("No valid response from Gemini API");
+                }
 
-            var request = new HttpRequestMessage(
-                HttpMethod.Post,
-                $"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={apiKey}"
-            )
-            {
-                Content = content
-            };
+                if (!candidates[0].TryGetProperty("content", out var contentElement) ||
+                    !contentElement.TryGetProperty("parts", out var parts) ||
+                    parts.GetArrayLength() == 0 ||
+                    !parts[0].TryGetProperty("text", out var text))
+                {
+                    _logger.LogError("Invalid Gemini response structure: {ResponseBody}", responseBody);
+                    throw new Exception("Invalid response structure from Gemini API");
+                }
 
-            var response = await httpClient.SendAsync(request);
+                var generatedText = text.GetString() ?? "";
+                _logger.LogInformation("Generated text: {GeneratedText}", generatedText);
 
-            if (!response.IsSuccessStatusCode)
-            {
-                var errorText = await response.Content.ReadAsStringAsync();
-                return $"Gemini API Error ({response.StatusCode}): {errorText}";
+                // Extract code block if present
+                var codeMatch = System.Text.RegularExpressions.Regex.Match(
+                    generatedText,
+                    @"```[\w\s]*\n([\s\S]*?)\n```"
+                );
+
+                return codeMatch.Success ? codeMatch.Groups[1].Value : generatedText;
             }
-
-            var responseBody = await response.Content.ReadAsStringAsync();
-            using var document = JsonDocument.Parse(responseBody);
-
-            var generatedText = document.RootElement
-                .GetProperty("candidates")[0]
-                .GetProperty("content")
-                .GetProperty("parts")[0]
-                .GetProperty("text")
-                .GetString();
-
-            var codeMatch = System.Text.RegularExpressions.Regex.Match(
-                generatedText ?? "",
-                @"```[\w\s]*\n([\s\S]*?)\n```"
-            );
-
-            return codeMatch.Success ? codeMatch.Groups[1].Value : generatedText ?? "";
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GenerateCode: {Message}", ex.Message);
+                throw new Exception($"Code generation failed: {ex.Message}");
+            }
         }
     }
 }
