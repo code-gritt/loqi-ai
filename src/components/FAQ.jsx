@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const FAQ = () => {
   const [openItems, setOpenItems] = useState(new Set());
@@ -15,68 +15,84 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: 'What is Larafast?',
-      answer: 'Larafast is a comprehensive Laravel development toolkit that provides pre-built components, authentication systems, admin dashboards, and more to help you build Laravel applications faster than ever before.'
+      question: "What is Loqi AI?",
+      answer:
+        'Loqi AI is a cutting-edge code generation tool that lets you input prompts, like "Generate a Python function for sorting," and receive AI-generated code instantly using the Google Gemini free tier.',
     },
     {
-      question: 'How does it save development time?',
-      answer: 'Larafast eliminates the need to build common features from scratch. Instead of spending weeks on authentication, admin panels, and payment integration, you get production-ready code that you can customize and deploy immediately.'
+      question: "How does it help developers?",
+      answer:
+        "Loqi AI streamlines coding by generating ready-to-use code snippets based on your prompts, saving time and allowing developers to focus on logic, architecture, and problem-solving rather than boilerplate.",
     },
     {
-      question: 'What\'s included in each package?',
-      answer: 'Each package includes different features. The Starter package includes basic authentication and admin panel. The Full Package adds payment integration, API docs, and multi-tenancy. The Premium package includes white-label solutions and custom development.'
+      question: "Which technologies does Loqi AI use?",
+      answer:
+        "Loqi AI uses Next.js, TypeScript, Tailwind CSS, Zustand for frontend state, GraphQL for backend queries, ASP.NET Core backend, Neon DB for database storage, and is deployed via Vercel (frontend) and Render (backend).",
     },
     {
-      question: 'Do you provide support?',
-      answer: 'Yes! All packages include 24/7 support. We have a dedicated support team that responds to questions within 24 hours. Premium customers get priority support with faster response times.'
+      question: "Do I need an account to use it?",
+      answer:
+        "Yes, you can register with your email, username, and password. All sessions are authenticated with JWT and persisted securely.",
     },
     {
-      question: 'Can I use it for client projects?',
-      answer: 'Absolutely! Larafast is perfect for client projects. It helps you deliver faster, which means you can take on more clients or charge premium rates for faster delivery.'
+      question: "Is Loqi AI a SaaS platform?",
+      answer:
+        "No. Loqi AI is free to use and non-SaaS. There are no credits, subscriptions, or payment requirements—just instant, ephemeral code generation.",
     },
     {
-      question: 'What Laravel versions are supported?',
-      answer: 'Larafast supports Laravel 8.x, 9.x, 10.x, and 11.x. We regularly update our codebase to support the latest Laravel versions and maintain backward compatibility.'
+      question: "Does Loqi AI store my code?",
+      answer:
+        "By default, generated code is ephemeral and not stored. Optionally, you can save your prompt history if desired, which is queried via GraphQL and stored in Neon DB.",
     },
     {
-      question: 'Is there a refund policy?',
-      answer: 'Yes, we offer a 30-day money-back guarantee. If you\'re not satisfied with Larafast for any reason, contact us within 30 days of purchase for a full refund.'
+      question: "Which programming languages are supported?",
+      answer:
+        "Loqi AI can generate code in multiple programming languages based on your prompt, including Python, JavaScript, TypeScript, C#, and more.",
     },
     {
-      question: 'How do updates work?',
-      answer: 'All packages include lifetime updates at no additional cost. You\'ll receive notifications when new updates are available, and you can download them from your account dashboard.'
+      question: "How do updates work?",
+      answer:
+        "Loqi AI is continuously updated on the backend. Users automatically benefit from the latest improvements to the Gemini model and platform features.",
     },
     {
-      question: 'Can I customize the code?',
-      answer: 'Yes! Larafast provides you with the source code, so you can customize it however you need. The code is well-documented and follows Laravel best practices.'
+      question: "Can I customize the generated code?",
+      answer:
+        "Absolutely! Loqi AI generates editable code snippets that you can integrate and modify directly in your projects.",
     },
     {
-      question: 'Do you offer team licenses?',
-      answer: 'Yes, we offer team licenses for companies with multiple developers. Contact us for custom pricing based on your team size and requirements.'
-    }
+      question: "Is there support available?",
+      answer:
+        "Yes. The Loqi AI team provides guidance and answers questions to help you make the most of the platform, even though it is free to use.",
+    },
   ];
 
   return (
     <section className="relative py-20 bg-white dark:bg-dark-bg overflow-hidden">
       {/* Animated Background Patterns */}
       <div className="absolute inset-0">
-        {/* Mesh Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 dark:from-dark-surface dark:via-dark-bg dark:to-dark-surface opacity-80"></div>
         <div className="absolute inset-0 bg-gradient-to-tr from-pink/15 via-transparent to-blue-500/15"></div>
-        
-        {/* Animated Geometric Patterns */}
+
         <div className="absolute top-16 right-16 w-24 h-24 bg-pink/12 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-16 left-16 w-28 h-28 bg-blue-500/12 rounded-full blur-lg animate-bounce" style={{animationDelay: '2.5s'}}></div>
-        <div className="absolute top-1/4 left-1/4 w-20 h-20 bg-purple-500/12 rounded-full blur-2xl animate-pulse" style={{animationDelay: '5s'}}></div>
-        
-        {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 opacity-8" style={{
-          backgroundImage: `
+        <div
+          className="absolute bottom-16 left-16 w-28 h-28 bg-blue-500/12 rounded-full blur-lg animate-bounce"
+          style={{ animationDelay: "2.5s" }}
+        ></div>
+        <div
+          className="absolute top-1/4 left-1/4 w-20 h-20 bg-purple-500/12 rounded-full blur-2xl animate-pulse"
+          style={{ animationDelay: "5s" }}
+        ></div>
+
+        <div
+          className="absolute inset-0 opacity-8"
+          style={{
+            backgroundImage: `
             linear-gradient(rgba(248, 74, 167, 0.12) 1px, transparent 1px),
             linear-gradient(90deg, rgba(248, 74, 167, 0.12) 1px, transparent 1px)
           `,
-          backgroundSize: '44px 44px'
-        }}></div>
+            backgroundSize: "44px 44px",
+          }}
+        ></div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,7 +101,7 @@ const FAQ = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-dark-gray dark:text-dark-text-secondary">
-            Everything you need to know about Larafast
+            Everything you need to know about Loqi AI
           </p>
         </div>
 
@@ -105,7 +121,7 @@ const FAQ = () => {
                 <div className="flex-shrink-0">
                   <svg
                     className={`w-5 h-5 text-pink transition-transform duration-200 ${
-                      openItems.has(index) ? 'rotate-180' : ''
+                      openItems.has(index) ? "rotate-180" : ""
                     }`}
                     fill="none"
                     stroke="currentColor"
@@ -120,7 +136,7 @@ const FAQ = () => {
                   </svg>
                 </div>
               </button>
-              
+
               {openItems.has(index) && (
                 <div className="px-6 pb-4">
                   <div className="border-t dark:border-gray-700 pt-4">
@@ -141,7 +157,7 @@ const FAQ = () => {
               Still have questions?
             </h3>
             <p className="text-dark-gray dark:text-dark-text-secondary mb-6">
-              Our support team is here to help you get the most out of Larafast
+              Our team is here to help you get the most out of Loqi AI
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-pink text-white px-6 py-3 rounded-lg font-medium hover:bg-pink/90 transition-all duration-300 shadow-lg shadow-pink/30 hover:shadow-pink/50">

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Larafast Landing - Firebase Hosting Deployment Script
+# Loqi AILanding - Firebase Hosting Deployment Script
 # This script removes the dist folder, builds the project, and deploys to Firebase Hosting
 
-echo "🚀 Starting Larafast Landing deployment to Firebase Hosting..."
+echo "🚀 Starting Loqi AILanding deployment to Firebase Hosting..."
 
 # Remove dist folder if it exists
 echo "🧹 Cleaning up previous build..."

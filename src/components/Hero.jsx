@@ -1,46 +1,73 @@
-import React from 'react';
-import Button from './Button';
-import GoogleIcon from '../assets/Google Icon.svg';
-import AWSIcon from '../assets/AWS Icon.svg';
-import FigmaIcon from '../assets/Figma Icon.svg';
-import GitHubIcon from '../assets/GitHub Icon.svg';
+import React from "react";
+import Button from "./Button";
+import GoogleIcon from "../assets/Google Icon.svg";
+import AWSIcon from "../assets/AWS Icon.svg";
+import FigmaIcon from "../assets/Figma Icon.svg";
+import GitHubIcon from "../assets/GitHub Icon.svg";
 
 const Hero = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="home" className="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:bg-navy text-gray-900 dark:text-white pt-36 min-h-screen flex items-center overflow-hidden">
+    <section
+      id="home"
+      className="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:bg-navy text-gray-900 dark:text-white pt-12 min-h-screen flex items-center overflow-hidden"
+    >
       {/* Animated Background Patterns */}
       <div className="absolute inset-0">
         {/* Mesh Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-navy dark:via-purple-900 dark:to-navy opacity-90"></div>
         <div className="absolute inset-0 bg-gradient-to-tr from-pink/20 via-transparent to-blue-500/20"></div>
-        
+
         {/* Animated Geometric Patterns */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-pink/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-blue-500/20 rounded-full blur-lg animate-bounce" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-purple-500/15 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-pink/25 rounded-full blur-lg animate-bounce" style={{animationDelay: '0.5s'}}></div>
-        
+        <div
+          className="absolute top-40 right-20 w-24 h-24 bg-blue-500/20 rounded-full blur-lg animate-bounce"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute bottom-20 left-1/4 w-40 h-40 bg-purple-500/15 rounded-full blur-2xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute bottom-40 right-1/3 w-28 h-28 bg-pink/25 rounded-full blur-lg animate-bounce"
+          style={{ animationDelay: "0.5s" }}
+        ></div>
+
         {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `
             linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
             linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
           `,
-          backgroundSize: '50px 50px'
-        }}></div>
-        
+            backgroundSize: "50px 50px",
+          }}
+        ></div>
+
         {/* Floating Particles */}
-        <div className="absolute top-1/4 left-1/3 w-2 h-2 bg-pink rounded-full animate-ping" style={{animationDelay: '0s'}}></div>
-        <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-blue-400 rounded-full animate-ping" style={{animationDelay: '1.5s'}}></div>
-        <div className="absolute bottom-1/3 left-1/5 w-1.5 h-1.5 bg-purple-400 rounded-full animate-ping" style={{animationDelay: '3s'}}></div>
-        <div className="absolute bottom-1/4 right-1/5 w-2 h-2 bg-pink rounded-full animate-ping" style={{animationDelay: '2.5s'}}></div>
+        <div
+          className="absolute top-1/4 left-1/3 w-2 h-2 bg-pink rounded-full animate-ping"
+          style={{ animationDelay: "0s" }}
+        ></div>
+        <div
+          className="absolute top-1/3 right-1/4 w-1 h-1 bg-blue-400 rounded-full animate-ping"
+          style={{ animationDelay: "1.5s" }}
+        ></div>
+        <div
+          className="absolute bottom-1/3 left-1/5 w-1.5 h-1.5 bg-purple-400 rounded-full animate-ping"
+          style={{ animationDelay: "3s" }}
+        ></div>
+        <div
+          className="absolute bottom-1/4 right-1/5 w-2 h-2 bg-pink rounded-full animate-ping"
+          style={{ animationDelay: "2.5s" }}
+        ></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -53,46 +80,53 @@ const Hero = () => {
               Trusted by 10,000+ developers
             </div>
 
-            <h1 className="text-5xl lg:text-6xl font-bold font-sora leading-tight">
-              Save Hundreds of hours using{' '}
+            <h1 className="text-5xl lg:text-5xl font-bold font-sora leading-tight">
+              Generate AI-Powered Code Instantly with{" "}
               <span className="text-pink bg-gradient-to-r from-pink to-purple-400 bg-clip-text text-transparent">
-                Larafast
+                Loqi AI
               </span>
             </h1>
-            
+
             <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
-              Accelerate your Laravel development with our comprehensive toolkit. 
-              Focus on building amazing features instead of repetitive boilerplate code.
+              Input your prompts and let Loqi AI produce clean, ready-to-use
+              code using the free Google Gemini model. Skip repetitive
+              boilerplate and accelerate your development workflow.
             </p>
 
             {/* Stats Row */}
             <div className="grid grid-cols-3">
               <div className="text-left">
-                <div className="text-3xl font-bold text-pink">500+</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">Hours Saved</div>
+                <div className="text-3xl font-bold text-pink">10k+</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  Developers Served
+                </div>
               </div>
               <div className="text-left">
-                <div className="text-3xl font-bold text-pink">50+</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">Pre-built Components</div>
+                <div className="text-3xl font-bold text-pink">100+</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  Code Snippets Generated
+                </div>
               </div>
               <div className="text-left">
                 <div className="text-3xl font-bold text-pink">99%</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">Developer Satisfaction</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  User Satisfaction
+                </div>
               </div>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                onClick={() => scrollToSection('pricing')}
+              <Button
+                size="lg"
+                onClick={() => scrollToSection("pricing")}
                 className="text-lg px-8 py-4 bg-gradient-to-r from-pink to-purple-500 hover:from-pink/90 hover:to-purple-500/90"
               >
-                Get Larafast
+                Try Loqi AI
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
-                onClick={() => scrollToSection('features')}
+                onClick={() => scrollToSection("features")}
                 className="text-lg px-8 py-4 border-pink text-pink hover:bg-pink hover:text-white"
               >
                 Learn More
@@ -101,14 +135,21 @@ const Hero = () => {
 
             {/* Trust Indicators */}
             <div className="pt-6 border-t border-gray-300 dark:border-gray-700">
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Trusted by developers at:</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                Trusted by developers at:
+              </p>
               <div className="flex items-center space-x-6 opacity-60">
                 <img src={GoogleIcon} alt="Google" className="h-6 w-auto" />
-                <svg className="h-6 w-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="1" y="1" width="10" height="10" fill="#F25022"/>
-                  <rect x="13" y="1" width="10" height="10" fill="#7FBA00"/>
-                  <rect x="1" y="13" width="10" height="10" fill="#00A4EF"/>
-                  <rect x="13" y="13" width="10" height="10" fill="#FFB900"/>
+                <svg
+                  className="h-6 w-auto"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect x="1" y="1" width="10" height="10" fill="#F25022" />
+                  <rect x="13" y="1" width="10" height="10" fill="#7FBA00" />
+                  <rect x="1" y="13" width="10" height="10" fill="#00A4EF" />
+                  <rect x="13" y="13" width="10" height="10" fill="#FFB900" />
                 </svg>
                 <img src={AWSIcon} alt="AWS" className="h-6 w-auto" />
                 <img src={FigmaIcon} alt="Figma" className="h-6 w-auto" />
@@ -130,41 +171,43 @@ const Hero = () => {
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   </div>
-                  <div className="text-gray-400 text-sm ml-4">Larafast Dashboard</div>
+                  <div className="text-gray-400 text-sm ml-4">
+                    Loqi AI Dashboard
+                  </div>
                 </div>
-                
+
                 {/* Editor Content */}
                 <div className="p-6 space-y-4">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-pink rounded-full animate-pulse"></div>
-                    <span className="text-pink text-sm font-mono">Larafast</span>
+                    <span className="text-pink text-sm font-mono">Loqi AI</span>
                   </div>
-                  
+
                   <div className="space-y-2 text-sm font-mono">
                     <div className="text-green-400 flex items-center">
-                      <span className="mr-2">✓</span> Authentication System
+                      <span className="mr-2">✓</span> Prompt Input
                     </div>
                     <div className="text-green-400 flex items-center">
-                      <span className="mr-2">✓</span> Admin Dashboard
+                      <span className="mr-2">✓</span> Code Generation
                     </div>
                     <div className="text-green-400 flex items-center">
-                      <span className="mr-2">✓</span> Payment Integration
+                      <span className="mr-2">✓</span> Syntax Highlighting
                     </div>
                     <div className="text-green-400 flex items-center">
-                      <span className="mr-2">✓</span> User Management
+                      <span className="mr-2">✓</span> JWT Authentication
                     </div>
                     <div className="text-yellow-400 flex items-center">
-                      <span className="mr-2">⚡</span> Ready in minutes, not hours
+                      <span className="mr-2">⚡</span> Ready instantly
                     </div>
                   </div>
-                  
+
                   {/* Terminal-like output */}
                   <div className="bg-black/50 rounded p-3 mt-4">
                     <div className="text-green-400 text-xs font-mono">
-                      $ php artisan larafast:install
+                      $ loqi generate "Python sorting function"
                     </div>
                     <div className="text-white text-xs font-mono mt-1">
-                      Larafast installed successfully! 🚀
+                      Code generated successfully! 🚀
                     </div>
                   </div>
                 </div>
@@ -178,40 +221,64 @@ const Hero = () => {
                   <span className="text-white text-sm">⚡</span>
                 </div>
                 <div>
-                  <div className="text-gray-900 dark:text-white text-sm font-semibold">Fast Setup</div>
-                  <div className="text-gray-700 dark:text-gray-300 text-xs">5 min install</div>
+                  <div className="text-gray-900 dark:text-white text-sm font-semibold">
+                    Instant Results
+                  </div>
+                  <div className="text-gray-700 dark:text-gray-300 text-xs">
+                    Generate code in seconds
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="absolute -bottom-6 right-6 lg:-right-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 dark:border-white/20 animate-float shadow-lg shadow-black/20" style={{animationDelay: '1s'}}>
+            <div
+              className="absolute -bottom-6 right-6 lg:-right-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 dark:border-white/20 animate-float shadow-lg shadow-black/20"
+              style={{ animationDelay: "1s" }}
+            >
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
                   <span className="text-white text-sm">🔧</span>
                 </div>
                 <div>
-                  <div className="text-gray-900 dark:text-white text-sm font-semibold">50+ Components</div>
-                  <div className="text-gray-700 dark:text-gray-300 text-xs">Ready to use</div>
+                  <div className="text-gray-900 dark:text-white text-sm font-semibold">
+                    Reusable Snippets
+                  </div>
+                  <div className="text-gray-700 dark:text-gray-300 text-xs">
+                    Copy & use instantly
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="absolute top-1/2 right-2 lg:-right-8 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 dark:border-white/20 animate-float shadow-lg shadow-black/20" style={{animationDelay: '2s'}}>
+            <div
+              className="absolute top-1/2 right-2 lg:-right-8 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 dark:border-white/20 animate-float shadow-lg shadow-black/20"
+              style={{ animationDelay: "2s" }}
+            >
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
                   <span className="text-white text-sm">📊</span>
                 </div>
                 <div>
-                  <div className="text-gray-900 dark:text-white text-sm font-semibold">Analytics</div>
-                  <div className="text-gray-700 dark:text-gray-300 text-xs">Built-in</div>
+                  <div className="text-gray-900 dark:text-white text-sm font-semibold">
+                    Seamless Dashboard
+                  </div>
+                  <div className="text-gray-700 dark:text-gray-300 text-xs">
+                    Monitor your prompts
+                  </div>
                 </div>
               </div>
             </div>
-            
+
             {/* Enhanced Floating elements */}
             <div className="absolute -top-4 -right-4 w-20 h-20 bg-pink/20 rounded-full blur-xl animate-pulse"></div>
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-500/20 rounded-full blur-xl animate-bounce" style={{animationDelay: '1s'}}></div>
-            <div className="absolute top-1/3 -left-8 w-16 h-16 bg-purple-500/20 rounded-full blur-lg animate-pulse" style={{animationDelay: '2s'}}></div>
+            <div
+              className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-500/20 rounded-full blur-xl animate-bounce"
+              style={{ animationDelay: "1s" }}
+            ></div>
+            <div
+              className="absolute top-1/3 -left-8 w-16 h-16 bg-purple-500/20 rounded-full blur-lg animate-pulse"
+              style={{ animationDelay: "2s" }}
+            ></div>
           </div>
         </div>
       </div>

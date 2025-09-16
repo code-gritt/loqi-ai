@@ -1,44 +1,49 @@
-import React from 'react';
-import VueIcon from '../assets/Vue.js Icon.svg';
-import LaravelIcon from '../assets/Laravel Icon.svg';
-import TailwindIcon from '../assets/Tailwind CSS Icon.svg';
-import AlpineIcon from '../assets/Alpine.js Icon.svg';
-import LivewireIcon from '../assets/Livewire Icon.svg';
-import PHPIcon from '../assets/PHP Icon.svg';
-import MySQLIcon from '../assets/MySQL Icon.svg';
-import IonicIcon from '../assets/Ionic Icon.svg';
+import React from "react";
+import VueIcon from "../assets/Vue.js Icon.svg";
+import LaravelIcon from "../assets/Laravel Icon.svg";
+import TailwindIcon from "../assets/Tailwind CSS Icon.svg";
+import AlpineIcon from "../assets/Alpine.js Icon.svg";
+import LivewireIcon from "../assets/Livewire Icon.svg";
+import PHPIcon from "../assets/PHP Icon.svg";
+import MySQLIcon from "../assets/MySQL Icon.svg";
+import IonicIcon from "../assets/Ionic Icon.svg";
 
 const TechStack = () => {
   return (
     <section className="relative py-20 bg-white dark:bg-dark-bg overflow-hidden">
       {/* Animated Background Patterns */}
       <div className="absolute inset-0">
-        {/* Mesh Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-100 dark:from-dark-surface dark:via-dark-bg dark:to-dark-surface opacity-80"></div>
         <div className="absolute inset-0 bg-gradient-to-tr from-pink/15 via-transparent to-blue-500/15"></div>
-        
-        {/* Animated Geometric Patterns */}
         <div className="absolute top-10 right-10 w-24 h-24 bg-pink/12 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-10 left-10 w-32 h-32 bg-blue-500/12 rounded-full blur-lg animate-bounce" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-purple-500/12 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
-        
-        {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 opacity-8" style={{
-          backgroundImage: `
+        <div
+          className="absolute bottom-10 left-10 w-32 h-32 bg-blue-500/12 rounded-full blur-lg animate-bounce"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/4 w-20 h-20 bg-purple-500/12 rounded-full blur-2xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute inset-0 opacity-8"
+          style={{
+            backgroundImage: `
             linear-gradient(rgba(248, 74, 167, 0.12) 1px, transparent 1px),
             linear-gradient(90deg, rgba(248, 74, 167, 0.12) 1px, transparent 1px)
           `,
-          backgroundSize: '40px 40px'
-        }}></div>
+            backgroundSize: "40px 40px",
+          }}
+        ></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-navy dark:text-dark-text font-sora mb-4">
-            Available with VILT & TALL Stacks
+            Built with Modern Dev Stacks
           </h2>
           <p className="text-lg text-gray-700 dark:text-dark-text-secondary max-w-2xl mx-auto font-medium">
-            Larafast works seamlessly with the most popular Laravel development stacks
+            Loqi AI integrates seamlessly with the most popular web development
+            technologies
           </p>
         </div>
 
@@ -76,7 +81,11 @@ const TechStack = () => {
           {/* Tailwind CSS */}
           <div className="flex flex-col items-center justify-center p-6 bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 group cursor-pointer">
             <div className="w-16 h-16 bg-white dark:bg-dark-surface rounded-xl flex items-center justify-center mb-3">
-              <img src={TailwindIcon} alt="Tailwind CSS" className="w-10 h-10" />
+              <img
+                src={TailwindIcon}
+                alt="Tailwind CSS"
+                className="w-10 h-10"
+              />
             </div>
             <div className="text-sm font-medium text-navy dark:text-dark-text text-center group-hover:text-cyan-600 transition-colors">
               Tailwind CSS
@@ -127,9 +136,18 @@ const TechStack = () => {
         {/* Additional info */}
         <div className="text-center mt-12">
           <p className="text-gray-700 dark:text-dark-text-secondary font-medium">
-            Plus support for <span className="font-semibold text-navy dark:text-dark-text">React</span>,{' '}
-            <span className="font-semibold text-navy dark:text-dark-text">Next.js</span>, and{' '}
-            <span className="font-semibold text-navy dark:text-dark-text">Nuxt.js</span>
+            Plus support for{" "}
+            <span className="font-semibold text-navy dark:text-dark-text">
+              Next.js
+            </span>
+            ,{" "}
+            <span className="font-semibold text-navy dark:text-dark-text">
+              React
+            </span>
+            , and{" "}
+            <span className="font-semibold text-navy dark:text-dark-text">
+              TypeScript
+            </span>
           </p>
         </div>
       </div>

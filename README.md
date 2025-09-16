@@ -1,6 +1,6 @@
-# Larafast Landing Page
+# Loqi AILanding Page
 
-A modern, responsive landing page for Larafast - a Laravel development toolkit. Built with React, Vite, and Tailwind CSS.
+A modern, responsive landing page for Loqi AI- a Laravel development toolkit. Built with React, Vite, and Tailwind CSS.
 
 ## Features
 
