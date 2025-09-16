@@ -1,0 +1,50 @@
+# Build results
+bin/
+obj/
+out/
+*.exe
+*.dll
+*.log
+*.db
+*.pdb
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# IDE folders
+.vscode/
+.idea/
+*.swp
+
+# OS junk files
+.DS_Store
+Thumbs.db
+
+# Dotnet tools
+.dotnet/
+*.nupkg
+*.snupkg
+
+# Secrets & configs
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.json
+secrets.json
+
+# EF Core migration binaries
+Migrations/**/obj/
+Migrations/**/bin/
+
+# Logs
+logs/
+*.log
+*.sql
+*.sqlite
+
+# Publish output
+publish/
+wwwroot/
