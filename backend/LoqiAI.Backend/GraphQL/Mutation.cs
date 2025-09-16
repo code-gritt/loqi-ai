@@ -36,7 +36,7 @@ namespace LoqiAI.Backend.GraphQL
                 new Claim(ClaimTypes.Name, user.Username)
             };
 
-            var jwtKey = Encoding.ASCII.GetBytes("your-secret-key-at-least-32-chars-long");
+            var jwtKey = Encoding.ASCII.GetBytes("89a8aac12af7462998e106384726991b");
             var creds = new SigningCredentials(new SymmetricSecurityKey(jwtKey), SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(

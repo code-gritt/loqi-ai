@@ -22,7 +22,7 @@ builder.Services
     .AddMutationType<Mutation>();
 
 // Configure JWT Authentication
-var jwtKey = Encoding.ASCII.GetBytes("your-secret-key-at-least-32-chars-long"); // 🔑 replace with a strong secret
+var jwtKey = Encoding.ASCII.GetBytes("89a8aac12af7462998e106384726991b"); // 🔑 replace with a strong secret
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
