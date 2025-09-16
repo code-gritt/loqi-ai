@@ -19,10 +19,8 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!token) {
-      navigate("/login");
-      return;
-    }
+    if (!token) return navigate("/login");
+
     const fetchUser = async () => {
       setLoading(true);
       try {
@@ -33,40 +31,37 @@ const Dashboard = () => {
           { Authorization: `Bearer ${token}` }
         );
         setUser(data.me);
-      } catch (err) {
-        console.error("Failed to fetch user", err);
+      } catch {
         navigate("/login");
       } finally {
         setLoading(false);
       }
     };
+
     if (!user) fetchUser();
   }, [token, user, navigate, setUser, setLoading]);
 
   if (!user) return null;
 
   return (
-    <section
-      id="dashboard"
-      className="min-h-screen pt-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:bg-navy px-4 sm:px-6 lg:px-8"
-    >
+    <section className="min-h-screen pt-24 bg-gray-50 dark:bg-navy transition-colors duration-300 px-4 sm:px-6 lg:px-8">
       {isLoading && <Loader />}
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-navy dark:text-dark-text mb-8 font-sora">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-8 font-sora">
           Welcome, {user.username}!
-        </h2>
-        <div className="bg-white dark:bg-dark-card rounded-2xl p-8 shadow-lg">
-          <h3 className="text-2xl font-semibold text-navy dark:text-dark-text mb-4">
+        </h1>
+
+        <div className="bg-white dark:bg-dark-card rounded-2xl p-6 sm:p-8 shadow-lg transition-colors duration-300">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             Generate Code
-          </h3>
+          </h2>
           <textarea
-            placeholder="Enter your prompt (e.g., Generate a React component)"
-            className="w-full p-4 border border-gray-300 dark:border-gray-700 rounded-lg mb-4 bg-transparent text-navy dark:text-dark-text"
+            placeholder="Enter your prompt..."
+            className="w-full p-4 border border-gray-300 dark:border-gray-700 rounded-lg mb-4 bg-transparent text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 focus:ring-2 focus:ring-pink focus:border-pink transition-all"
           />
-          <button className="bg-pink text-white px-6 py-3 rounded-lg font-medium hover:bg-pink/90 transition-all">
+          <button className="w-full sm:w-auto bg-pink text-white py-3 px-6 rounded-lg font-medium hover:bg-pink/90 transition-colors duration-300">
             Generate
           </button>
-          {/* Add code output pre block here later */}
         </div>
       </div>
     </section>

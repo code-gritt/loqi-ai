@@ -28,7 +28,7 @@ const Register = () => {
         REGISTER_MUTATION,
         { email, username, password }
       );
-      navigate("/login"); // Redirect to login after register
+      navigate("/login");
     } catch (err) {
       setError(err.response?.errors[0]?.message || "Registration failed");
     } finally {
@@ -37,20 +37,20 @@ const Register = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:bg-navy px-4">
+    <section className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-navy transition-colors duration-300 px-4">
       {isLoading && <Loader />}
-      <div className="bg-white dark:bg-dark-card rounded-2xl p-8 shadow-lg max-w-md w-full">
-        <h2 className="text-3xl font-bold text-navy dark:text-dark-text mb-6 font-sora">
+      <div className="bg-white dark:bg-dark-card rounded-2xl p-6 sm:p-8 shadow-lg max-w-md w-full transition-colors duration-300">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 font-sora text-center">
           Register for Loqi AI
         </h2>
-        {error && <p className="text-red-500 mb-4">{error}</p>}
+        {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
         <form onSubmit={handleRegister} className="space-y-4">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
-            className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-transparent text-navy dark:text-dark-text"
+            className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-transparent text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 focus:ring-2 focus:ring-pink focus:border-pink transition-all"
             required
           />
           <input
@@ -58,7 +58,7 @@ const Register = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Username"
-            className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-transparent text-navy dark:text-dark-text"
+            className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-transparent text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 focus:ring-2 focus:ring-pink focus:border-pink transition-all"
             required
           />
           <input
@@ -66,17 +66,17 @@ const Register = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
-            className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-transparent text-navy dark:text-dark-text"
+            className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-transparent text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 focus:ring-2 focus:ring-pink focus:border-pink transition-all"
             required
           />
           <button
             type="submit"
-            className="w-full bg-pink text-white py-3 rounded-lg font-medium hover:bg-pink/90 transition-all"
+            className="w-full bg-pink text-white py-3 rounded-lg font-medium hover:bg-pink/90 transition-colors duration-300"
           >
             Register
           </button>
         </form>
-        <p className="text-center text-dark-gray dark:text-dark-text-secondary mt-4">
+        <p className="text-center text-gray-600 dark:text-gray-300 mt-4">
           Already have an account?{" "}
           <a href="/login" className="text-pink hover:underline">
             Login
