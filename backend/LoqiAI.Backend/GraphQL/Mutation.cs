@@ -98,7 +98,7 @@ namespace LoqiAI.Backend.GraphQL
                 var json = JsonSerializer.Serialize(requestBody);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                var apiKey = "AIzaSyCrFOJs7a9eRY4kc2U6efgERkKpLRH_pqs";
+                var apiKey = "AIzaSyDqxbID4YBbRnVrVMfvuAgRLAyrjG-hs48";
                 var request = new HttpRequestMessage(
                     HttpMethod.Post,
                     $"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={apiKey}"
